@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/api/resource.proto";
+import "google/api/field_behavior.proto";
+import "google/api/client.proto";
+import "google/api/annotations.proto";
+import "google/type/date.proto";
+
+package foo.ad.resources.receipts.v1;
+
+option go_package = "go.protobuf.foo.alis.exchange/foo/ad/resources/receipts/v1";
+
+// Add comment here...
+service ReceiptsService {
+	// Create a new receipt
+	// See: https://google.aip.dev/133
+	rpc CreateReceipt (CreateReceiptRequest) returns (Receipt) {
+		option (google.api.http) = {
+			post: "/resources/receipts/v2/receipts"
+			body: "receipt"
+		};
+		option (google.api.method_signature) = "receipt";
+	}
+	// Get an receipt
+	// See: https://google.aip.dev/131
+	rpc GetReceipt (GetReceiptRequest) returns (Receipt) {
+		option (google.api.http) = {
+			get: "/resources/receipts/v2/{name=receipts/*}"
+		};
+		option (google.api.method_signature) = "name";
+	}
+//	// Update an receipt
+//	// See: https://google.aip.dev/131
+//	rpc UpdateReceipt (UpdateReceiptRequest) returns (Receipt) {
+//		option (google.api.http) = {
+//			get: "/resources/receipts/v2/{name=receipts/*}"
+//		};
+//		option (google.api.method_signature) = "name";
+//	}
+}
+
+// A receipt resource.
+// A receipt is used to monitor
+message Receipt {
+
+	//Name of the resource in the format:
+	//receipts/{receipt}
+	string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+	//The email of the client.
+	//Example: bar@foo.com
+	string client = 2 [(google.api.field_behavior) = REQUIRED];
+
+	//The full names of the books taken out by the client.
+	//Format: books/{book}
+	repeated string books = 3 [(google.api.field_behavior) = REQUIRED];
+
+	// The date the book was borrowed by the client.
+    // THis is automatically generated when a receipt is created.
+	google.type.Date borrow_date = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+	// The date the book(s) is required to be returned
+	google.type.Date required_return_date = 5 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Request message for CreateReceipt.
+message CreateReceiptRequest {
+	// The Receipt to create
+	Receipt receipt = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Request message for GetReceipt
+message GetReceiptRequest {
+	//Name of the resource in the format:
+	//receipts/{receipt}
+	string name = 1 [(google.api.field_behavior) = REQUIRED];
+}
