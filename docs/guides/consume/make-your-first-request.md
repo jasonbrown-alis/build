@@ -9,7 +9,7 @@ sidebarDepth: 0
 
 Given the underlying technologies used, **alis.exchange** provides the ability to generate client libraries for various
 supported coding languages. For users of the product, it allows you to programmatically access products natively in your
-code without having to wrangle obscure, unpredictable data objects (see the [quick start](./consume/quick-start.md)).
+code without having to wrangle obscure, unpredictable data objects (see the [quick start](./quick-start.md)).
 
 Irrespective of the language, this is done in two steps:
 
