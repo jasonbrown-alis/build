@@ -1,0 +1,67 @@
+:root {
+	--vp-c-brand: #F02222;
+	--vp-c-brand-light: #ffcdd2;
+	--vp-c-brand-dark: #950000;
+	--vp-c-brand-darker: #950000;
+	--vp-font-family-base: "Roboto", sans-serif !important;
+}
+.vp-doc h1{
+	font-weight: lighter;
+}
+.vp-doc h2{
+	font-weight: lighter;
+}
+.vp-doc h3{
+	font-weight: lighter;
+}
+.vp-doc h4{
+	font-weight: normal;
+}
+.vp-doc p{
+	font-weight: lighter;
+}
+.vp-doc strong{
+	font-weight: normal;
+}
+.vp-doc li{
+	font-weight: lighter;
+}
+.vp-doc table {
+	font-size: 14px;
+	min-width: 100%;
+}
+.vp-doc table thead {
+	line-height: 1.5px;
+
+}
+.vp-doc th{
+	border-left: none;
+	border-right: none;
+	border-width: 0.5px;
+
+	font-weight: normal;
+	font-size: 14px;
+}
+.vp-doc tr,
+.vp-doc td {
+	border-left: none;
+	border-right: none;
+	border-width: 0.5px;
+}
+
+.vp-doc tr:nth-child(2n) {
+	background-color: transparent;
+}
+
+.vp-doc tr:hover{
+	background-color: var(--vp-c-text-inverse-2);
+}
+
+.VPLink active{
+	font-size: 20px;
+	color: green;
+}
+
+.VPHero .image {
+	max-width: 480px;
+}

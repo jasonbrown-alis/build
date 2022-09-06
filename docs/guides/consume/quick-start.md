@@ -29,7 +29,7 @@ Two things to take note of:
 1. Defining things is the first, essential part of building on **alis.exchange**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file. 
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
-Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/other-resources/other-resources.md).
+Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/references/other-resources/other-resources.md).
 
 
 ## Experience the simplicity
@@ -38,7 +38,7 @@ Find out more about Protobufs, their usage and benefits on **alis.exchange** in 
 
 Let us consider a `Book` resource with _name_, _display name_, _authors_ and _publishers_ as fields. This is defined in a `books.proto` file as follows:
 
-```protobuf
+```
 // The definition of a book resource.
 message Book {
 
@@ -59,7 +59,7 @@ message Book {
 
 The builders of this product allows you to list all the books available, `ListBooks`, and to retrieve the details of a specific book, `GetBook`. These are also defined in the `books.proto` file as part of the `BooksService`:
 
-```protobuf
+```
 // Book service for foo.br.
 service BooksService {
 	// List all available books.
@@ -84,9 +84,7 @@ Now that we know what resource is available, `Book`, and what we are able to do 
 
 Experience the simplicity in accessing these methods in any of the supported languages in using one of our preconfigured cloud IDEs:
 
-:::: tabs
 
-::: tab Go
 #### Make a request using Go
 
 <a href="https://gitpod.io#snapshot/c1eafefa-0414-439e-a618-4089e1d50143" target="_blank">Preconfigured Go cloud IDE</a>
@@ -97,15 +95,15 @@ Experience the simplicity in accessing these methods in any of the supported lan
 
 2. Make sure you are in the `playground` directory.
 
-```bash
-cd workspace/playground
-```
+	```bash
+	cd workspace/playground
+	```
 
 3. Run the code by running the terminal command:
 
-```bash
-go run *.go
-```
+	```bash
+	go run *.go
+	```
 
 #### Get a feel for the **alis.exchange** experience
 
@@ -116,9 +114,13 @@ We suggest creating your own function and incorporating a request to the `BooksC
 * Loop through all the books and print out the author.
 * Get a book and wrangle the response to be printed out in a sentence structure.
 * Use the response of `ListBooks` to make multiple `GetBook` requests.
-:::
 
-::: tab R
+```bash
+yarn add -D vitepress
+```
+
+
+
 #### Make a request using R
 
 <a href="https://gitpod.io#snapshot/c858a081-f9e0-4791-9330-606a568df6fd" target="_blank">Preconfigured R cloud IDE</a>
@@ -148,10 +150,6 @@ We suggest creating your own function and incorporating a request to the `BooksC
 * Loop through all the books and print out the author.
 * Get a book and wrangle the response to be printed out in a sentence structure.
 * Use the response of `ListBooks` to make multiple `GetBook` requests.
-
-:::
-
-::::
 
 If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/consume/make-your-first-request.md).
 ## Next Steps

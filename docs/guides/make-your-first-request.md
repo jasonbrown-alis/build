@@ -30,21 +30,21 @@ on a specific book.
 
 The full `Books.proto` file is shown for reference purposes.
 
-```protobuf
+```
 syntax = "proto3";
 
 package play.me.resources.books.v1;
 
-import "google/protobuf/empty.proto";
+import "google//empty.proto";
 import "google/api/resource.proto";
 import "google/api/field_behavior.proto";
 import "google/api/client.proto";
 import "google/api/annotations.proto";
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/field_mask.proto";
+import "google//timestamp.proto";
+import "google//field_mask.proto";
 import "google/type/date.proto";
 
-option go_package = "go.protobuf.play.alis.exchange/play/me/resources/books/v1";
+option go_package = "go..play.alis.exchange/play/me/resources/books/v1";
 // Book service for play.me.
 // Book service for play.me.
 service BooksService {
@@ -64,7 +64,7 @@ service BooksService {
         option (google.api.method_signature) = "name";
     }
      // Delete a book.
-     rpc DeleteBook(DeleteBookRequest) returns (google.protobuf.Empty) {
+     rpc DeleteBook(DeleteBookRequest) returns (google..Empty) {
      	option (google.api.http) = {
      		delete: "/resources/store/v1/{name=books/*}"
      	};
@@ -161,7 +161,7 @@ import (
 	"google.golang.org/grpc/credentials/oauth"
 	"google.golang.org/grpc/status"
 
-	pb "go.protobuf.play.alis.exchange/play/me/resources/books/v1"
+	pb "go..play.alis.exchange/play/me/resources/books/v1"
 )
 
 // The booksClient is defined as a global variable. It is declared once on init and used to call the various methods of the BooksService
@@ -327,7 +327,7 @@ import (
 	"google.golang.org/grpc/credentials/oauth"
 	"google.golang.org/grpc/status"
 
-	pb "go.protobuf.play.alis.exchange/play/me/resources/books/v1"
+	pb "go..play.alis.exchange/play/me/resources/books/v1"
 )
 
 // The booksClient is defined as a global variable. It is declared once on init and used to call the various methods of the BooksService

@@ -40,11 +40,7 @@ Your Git needs to be configured with Google Cloud Source repositories. Credentia
 
 ☑️ Check if this was successful by opening the `.gitcookies` file in Vim: `vim ~/.gitcookies`. If successful, the file should contain a `source.developers.google.com` entry.
 
-## Install the CLI
-
-:::: tabs
-
-::: tab MacOS/Linux
+## MacOS/Linux Installation
 
 1. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
 
@@ -82,10 +78,8 @@ chmod a+x $HOME/alis.exchange/cli/alis
 
 You have successfully installed the **alis.exchange** CLI!
 
-:::
 
-
-::: tab Windows
+## Windows Installation
 
 1. Open command prompt as administrator.
 2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
@@ -118,10 +112,6 @@ setx PATH "%PATH%;%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 
 
 You have successfully installed the **alis.exchange** CLI!
-
-:::
-
-::::
 
 
 
