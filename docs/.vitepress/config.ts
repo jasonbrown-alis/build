@@ -8,7 +8,7 @@ export default {
 	themeConfig: {
 		siteTitle: 'Docs',
         editLink: {
-            pattern: 'https://github.com/alis-exchange/docs/edit/main/docs/:path',
+            pattern: 'https://github.com/alis-exchange/build/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
         },
 		nav: [
@@ -26,7 +26,7 @@ export default {
 			}
 		],
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/alis-exchange/docs' },
+            { icon: 'github', link: 'https://github.com/alis-exchange/build' },
         ],
 		sidebar: {
 			'/guides/': [
