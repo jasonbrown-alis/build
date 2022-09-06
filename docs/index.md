@@ -7,7 +7,7 @@ layout: home
     <img class="home-splash" src="./assets/logo.svg">
   </div>
   <div class="break"></div>
-  <a class="home-get-started" href="/guides/make-your-first-request">
+  <a class="home-get-started" href="/guides/getting-started/introduction.html">
     GET STARTED
   </a>
 </div>
@@ -29,7 +29,7 @@ layout: home
 }
 
 .home-splash{
-  max-height: 360px;
+  max-height: 210px;
   width: 100%;
 }
 
