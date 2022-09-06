@@ -22,6 +22,7 @@ An `organisation` resource represents the top-level resource on **alis.exchange*
 	- Is responsible for billing.
 	- Owns and manages users in the organisation along with access management.
 	- Has a monorepo in which all resource and service definitions as well as infrastructure specification contained.
+    
 ## Product
 
 A `product` resource represents a digital product built on **alis.exchange**. The majority of these adopt an API-first strategy.

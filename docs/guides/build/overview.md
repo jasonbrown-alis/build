@@ -1,7 +1,7 @@
 ---
 title: Overview
 sidebarDepth: 2
-next: /guides/consume/quick-start
+next: "Consume: Quick start"
 ---
 
 # Overview
@@ -17,8 +17,8 @@ when creating services are depicted below.
 
 Each of the steps are explained in the following sections and follow the structure:<br>
 - Overview of the step; <br>
-- 👨‍💻 **User actions** - the actions that are required from the user;<br>
-- 🏗 **alis.exchange** - what is facilitated by us in the background; and<br>
+- 👨‍💻 **User actions** - the actions that are required from the user; and<br>
+- 🏗 **alis.exchange** - what is facilitated by us in the background<br>
 
 > ‼️ The build example provides detailed steps for the user actions where this section aims to communicate the high-level overview of what would be done.
 
@@ -43,11 +43,11 @@ The user is required to flesh out the proto, and should be consistent with [Goog
 
 The primary questions that developers aim to answer during this step is:
 
-1. What are the resources that we are considering? These will be translated into the `messages` in the proto.<br>
+1. What are the resources that we are considering?<br> These will be translated into the `messages` in the proto.<br>
 _eg. In the asset management space this may be a `porfolio` and `holdings`._
 2. What are the potential relationships and hierarchy between the resources?<br>
 _eg. `portfolio` is the parent of `holdings`._
-3. What operations are to be performed? These will be translated into the `methods` of the proto, housed in a `service`.<br>
+3. What operations are to be performed?<br> These will be translated into the `methods` of the proto, housed in a `service`.<br>
 _eg. [Standard methods](https://google.aip.dev/131) such as `CreatePortfolio`, `UpdatePortfolio` or [custom methods](https://google.aip.dev/136) such as `CheckPortfolioCompliance`._
 
 Since the protos sit within a version control repo, multiple developers may collaborate and iterate on the proto design. Once the proto is defined and ready to be implemented, it can the be `released`.

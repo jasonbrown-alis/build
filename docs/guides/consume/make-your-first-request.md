@@ -5,11 +5,11 @@ sidebarDepth: 0
 
 # Make a request to a product in your local environment
 
-> 🚩 This section is supplementary to the [quickstart](/docs/guides/consume/quick-start.md). We recommend that you first complete the quickstart before attempting this section.
+> 🚩 This section is supplementary to the [quick start](./quick-start.md). We recommend that you first complete the quickstart before attempting this section.
 
 Given the underlying technologies used, **alis.exchange** provides the ability to generate client libraries for various
 supported coding languages. For users of the product, it allows you to programmatically access products natively in your
-code without having to wrangle obscure, unpredictable data objects (see [quickstart](/docs/guides/consume/quick-start.md).
+code without having to wrangle obscure, unpredictable data objects (see the [quick start](./consume/quick-start.md)).
 
 Irrespective of the language, this is done in two steps:
 
@@ -18,7 +18,7 @@ Irrespective of the language, this is done in two steps:
 
 Following the same Book example as the quickstart, this guide will step you through making requests in your own developer environment.
 
-> We currently only provide the guide for Go. Want to help us expand this to other languages? [Make a contribution](https://github.com/alis-x/docs/edit/main/docs/guides/make-your-first-request.md).
+> We currently only provide the guide for Go. Want to help us expand this to other languages? [Make a contribution](https://github.com/alis-x/docs/edit/main/docs/guides/consume/make-your-first-request.md).
 
 
 ## Book repository example
@@ -30,7 +30,7 @@ on a specific book.
 
 The full `Books.proto` file is shown for reference purposes.
 
-```protobuf
+```
 syntax = "proto3";
 
 package play.me.resources.books.v1;
@@ -266,6 +266,7 @@ func printBookNames() (string, error) {
 	return "Done!", nil
 }
 ```
+
 
 #### Get book
 
