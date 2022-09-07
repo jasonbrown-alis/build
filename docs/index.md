@@ -4,7 +4,7 @@ layout: home
 
 <div class="home-container">
   <div class="home-splash">
-    <img class="home-splash" src="./assets/logo.svg">
+    <img class="home-splash" src="/logo.svg">
   </div>
   <div class="break"></div>
   <a class="home-get-started" href="/guides/getting-started/introduction.html">
