@@ -66,7 +66,7 @@ Once completing the above, the user can proceed to write and customise the docs 
 
 You can customise the index.md for each section as you’d like, including the index.md at the root of the docs folder which is the landing page for your docs. You can create any subdirectories you desire within the provided `guides`, `reference` and `samples` subdirectories. The generated docs will then provide sections and pages that directly reflect your folder structure and markdown files. For example:
 
-```text
+```
 .
 ├── guides
 │   ├── how-to-guides
