@@ -32,11 +32,11 @@ Product docs on Build OS are generated using 2 sources:
 2. The custom markdown files contained within the `docs` folder, which exist within your organisations `proto` repo, for the product of interest.
 ```
 proto
-└── {orgID}
-├── {productID}
-│   ├── docs/*.md
-│   ├── resources/*.proto
-│   └── services/*.proto
+├──{orgID}
+│   └── {productID}
+│       ├── docs/*.md
+│       ├── resources/*.proto
+│       └── services/*.proto
 └── {productID_2}/
 ```
 From these files, the documentation which is generated is broken up into 2 parts:
@@ -66,7 +66,7 @@ Once completing the above, the user can proceed to write and customise the docs 
 
 You can customise the index.md for each section as you’d like, including the index.md at the root of the docs folder which is the landing page for your docs. You can create any subdirectories you desire within the provided `guides`, `reference` and `samples` subdirectories. The generated docs will then provide sections and pages that directly reflect your folder structure and markdown files. For example:
 
-```
+```text
 .
 ├── guides
 │   ├── how-to-guides
