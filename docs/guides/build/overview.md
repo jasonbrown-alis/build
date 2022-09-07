@@ -1,7 +1,7 @@
 ---
 title: Overview
 sidebarDepth: 2
-next: "Consume: Quick start"
+next: "Build: Using Auto-generated Docs"
 ---
 
 # Overview

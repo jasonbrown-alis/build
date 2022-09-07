@@ -57,6 +57,10 @@ export default {
                                     text: 'Overview',
                                     link: '/guides/build/overview'
                                 },
+                                {
+                                    text: 'Using Auto-generated Docs',
+                                    link: '/guides/build/auto-generated-docs'
+                                }
                             ]
                         },
                         {
