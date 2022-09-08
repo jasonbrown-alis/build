@@ -16,6 +16,9 @@ export default {
             pattern: 'https://github.com/alis-exchange/build/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
         },
+		markdown:{
+			theme: "material-lighter"
+		},
 		nav: [
 			{
 				text: toTitleCase(ROOT_GUIDES),
