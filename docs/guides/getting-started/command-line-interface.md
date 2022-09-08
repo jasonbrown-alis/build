@@ -111,7 +111,7 @@ Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 ### List of available CLI binaries
 
 | Windows                                                                        |
-   | ------- |
+| ------- |
 | [Windows Arm](https://files.cli.alis.services/windows/arm/4.0.96/alis.exe)     |
 | [Windows Arm64](https://files.cli.alis.services/windows/arm64/4.0.96/alis.exe) |
 | [Windows Amd64](https://files.cli.alis.services/windows/amd64/4.0.96/alis.exe) |

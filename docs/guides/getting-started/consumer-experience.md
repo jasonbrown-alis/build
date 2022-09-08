@@ -24,7 +24,7 @@ What is important from a practical perspective however is that:
 
 Two things to take note of:
 
-1. Defining things is the first, essential part of building on the Alis Build OS platform. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
+1. Defining things is the first, essential part of building on the Alis Build platform. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
 Find out more about Protobufs, their usage and benefits on the platform in the [core technologies article](/guides/references/core-technologies.md).
