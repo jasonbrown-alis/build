@@ -4,13 +4,13 @@ title: Leveraging auto-generated documentation
 
 # Leveraging auto-generated documentation
 
-Alis Build OS provides out-of-the-box documentation for products built on the platform. This documentation consists of API reference documentation auto-generated directly from the protocol buffers, custom user guides and code samples which teams may compile to provide greater assistance to clients.
+The Alis Build platform provides out-of-the-box documentation for products built on the platform. This documentation consists of API reference documentation auto-generated directly from the protocol buffers, custom user guides and code samples which teams may compile to provide greater assistance to clients.
 
 In this guide, we aim to give you the necessary background to leverage this documentation service.
 
 ::: tip **Before you start**
-1. [Download and install the Alis Build OS CLI](/guides/getting-started/command-line-interface);
-2. Ensure you are part of an existing organisation and product on Build OS;
+1. Download and install the [Alis CLI](/guides/getting-started/command-line-interface);
+2. Ensure you are part of an existing organisation and product on the platform;
 3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`.
 :::
 
@@ -34,7 +34,12 @@ Once the documentation has been released, it will be publicly available at [http
 
 The reference documentation component is generated from the proto files. The emphasis on the definition first-approach ensures that the effort is focussed on the design of the protos with detailed comments above the various services, methods, messages and fields and this design is then propagated into the reference documentation for the APIs.
 
-::: danger
+::: warning
+It is important to note that this auto-generated documentation is publicly available. Any protocol buffer content that should not be publicly available should be specified as `hidden`.
+The [specifying proto visibility scopes guide](/guides/how-to-guides/proto-visibility-scopes) explains how to implement visibility scopes.
+:::
+
+::: danger **Caveats**
 A current caveat is that the use of certain Markdown syntax in your comments may result in invalid Markdown syntax in the generated documentation, causing the build of your documentation to fail. This is primarily the usage of the “|” character in your proto comments as well as using line breaks in links.
 :::
 
@@ -105,7 +110,7 @@ Since our documentation uses [VitePress](https://vitepress.vuejs.org/) under the
 
 ## Deploying documentation
 
-Alis Build OS runs a nightly build and release of all product documentation as well as provides a means to manually update documentation. These are discussed in the following sections.
+The platform runs a nightly build and release of all product documentation as well as provides a means to manually update documentation. These are discussed in the following sections.
 
 ### Auto-generated nightly release
 
@@ -113,7 +118,7 @@ The nightly build of all product documentation will reflect:
 1. The reference documentation of the last released protocol buffers;
 2. The state of the documentation in the repo's `master` branch when the build is kicked off.
 
-::: Warning
+::: warning
 It is essential that documentation that is present in the master branch is production ready.
 :::
 
@@ -129,4 +134,4 @@ Cases exist where teams may want to deploy a new version of the documentation, s
 $ alis docs release play.dm
 ```
 
-4. The documentation will be available at: https://docs.{productID}.{orgDomain}(https://docs.de.alis.services)
+4. The documentation will be available at: `https://docs.{productID}.{orgDomain}` (e.g. https://docs.de.alis.services)

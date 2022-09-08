@@ -82,6 +82,10 @@ export default {
 							link: '/guides/how-to-guides/auto-generated-docs'
 						},
 						{
+							text: 'Specifying proto visibility scopes',
+							link: '/guides/how-to-guides/proto-visibility-scopes'
+						},
+						{
 							text: 'Configure your IDE',
 							link: '/guides/how-to-guides/configure-your-IDE'
 						},

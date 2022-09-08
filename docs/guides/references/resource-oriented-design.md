@@ -35,7 +35,7 @@ _protos_, as the interface definition language. This technology is core to all t
 
 The protos becomes the golden source of truth of anything we do on the exchange. Having this, one can eliminate
 common developer toil by:
-- Auto-generating documentation for APIs;
+- [Auto-generating documentation](/guides/how-to-guides/auto-generated-docs) for APIs;
 - Auto-generating source code for the majority of popular languages including Go, Java, Python and more;
 - Auto-generating equivalent REST endpoints for gRPC services;
 - Setting API behaviour; and
