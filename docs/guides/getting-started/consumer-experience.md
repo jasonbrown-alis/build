@@ -1,17 +1,15 @@
 ---
-title: Quick Start
-next: /guides/consume/make-your-first-request
-sidebarDepth: 0
+title: Consumer experience
 ---
-# Quick Start
+# Consumer experience
 
 We aim to ensure that how software across **alis.exchange** operates, communicates and integrates is simple and consistent. Whether you are getting results from a model, updating a database or executing trades, all of these actions should feel familiar. This allows you to seamlessly adopt anything across **alis.exchange** without spending hours in obscure documentation and the toil of attempting to integrate it in your code.
 
 What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience **alis.exchange** for yourself. Below is a teaser of what you can expect 😉.
 
-![](./img/quick-start-autocomplete1.gif)
+![](img/quick-start-autocomplete1.gif)
 
-![](./img/quick-start-autocomplete2.gif)
+![](img/quick-start-autocomplete2.gif)
 
 
 ## Definition-first approach
@@ -29,7 +27,7 @@ Two things to take note of:
 1. Defining things is the first, essential part of building on **alis.exchange**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
-Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/references/other-resources/other-resources.md).
+Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/guides/references/core-technologies.md).
 
 
 ## Experience the simplicity
@@ -154,7 +152,7 @@ We suggest creating your own function and incorporating a request to the `BooksC
 * Get a book and wrangle the response to be printed out in a sentence structure.
 * Use the response of `ListBooks` to make multiple `GetBook` requests.
 
-If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/consume/make-your-first-request.md).
+If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/how-to-guides/make-your-first-request.md).
 ## Next Steps
 
 **Ready to join alis.exchange?** <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.

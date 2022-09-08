@@ -189,7 +189,7 @@
 [//]: # (    - `services-{serviceName}-{majorVersion} for services)
 
 [//]: # ()
-[//]: # (In our example, we would usually have specified the `receipts` resource as `resources-receipts-v1`. However, since we are reusing this product as a playground for multiple users, we ask that you add a unique ending to the resource, such as adding your initials. Eg. `resources-receipts-v1`.)
+[//]: # (In our example, we would usually have specified the `receipts` resource as `resources-receipts-v1`. However, since we are reusing this product as a playground for multiple users, we ask that you add a unique ending to the resource, such as adding your initials. e.g. `resources-receipts-v1`.)
 
 [//]: # ()
 [//]: # (1. From your terminal, run the command `alis neuron create play.ad.{{yourResourceID}}`, specifying your unique resource ID.)

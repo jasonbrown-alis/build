@@ -1,7 +1,9 @@
 ---
 title: Other Resources
 ---
-# Other Resources
+# Core technologies
+
+This page provides a high-level overview of some core technologies used on Alis Build.
 
 ## Protocol buffers
 Protocol buffers, commonly referred to as _protos_, provide the interface definition language.

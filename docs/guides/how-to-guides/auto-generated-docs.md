@@ -1,6 +1,5 @@
 ---
 title: Leveraging auto-generated documentation
-next: "Consume: Quick start"
 ---
 
 # Leveraging auto-generated documentation
@@ -10,7 +9,7 @@ Alis Build OS provides out-of-the-box documentation for products built on the pl
 In this guide, we aim to give you the necessary background to leverage this documentation service.
 
 ::: tip **Before you start**
-1. [Download and install the Alis Build OS CLI](/guides/configuration/command-line-interface);
+1. [Download and install the Alis Build OS CLI](/guides/getting-started/command-line-interface);
 2. Ensure you are part of an existing organisation and product on Build OS;
 3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`.
 :::
@@ -29,7 +28,7 @@ proto
 │       └── services/.../*.proto
 ```
 
-Once the documentation has been released, it will be publicly available at [https://docs.{productID}.{orgDomain}](https://docs.de.alis.services) (eg. [https://docs.de.alis.services](https://docs.de.alis.services)).
+Once the documentation has been released, it will be publicly available at [https://docs.{productID}.{orgDomain}](https://docs.de.alis.services) (e.g. [https://docs.de.alis.services](https://docs.de.alis.services)).
 
 ## Updating reference documentation
 
@@ -41,7 +40,7 @@ A current caveat is that the use of certain Markdown syntax in your comments may
 
 ## Writing guides and samples
 
-The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and `samples` sub-directories each containing an `index.md` directory.
+The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, i.e. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and `samples` subdirectories each containing an `index.md` directory.
 
 ```
 docs
@@ -83,7 +82,7 @@ Any subdirectory added under `guides` and `samples` will be converted into a hea
     ├── code_sample_1.md
     ├── index.md
 ```
-![](./img/docs-folder-structure.png)
+![](img/docs-folder-structure.png)
 
 
 The titles used in the sidebar is derived from the `title` field in the [file's YAML Frontmatter](https://vitepress.vuejs.org/guide/frontmatter). For example, the `guides/how-to-guides/first_screening.md` file, the YAML Frontmatter would be:
@@ -120,7 +119,7 @@ It is essential that documentation that is present in the master branch is produ
 
 ### Manual release
 
-Cases exist where teams may want to deploy a new version of the documentation, such as: adding new documentation pages, updating protocol buffers or making fixes to existing pages. To run a manual release, the [Alis Build CLI](/guides/configuration/command-line-interface) will be used and the following steps can be followed:
+Cases exist where teams may want to deploy a new version of the documentation, such as: adding new documentation pages, updating protocol buffers or making fixes to existing pages. To run a manual release, the [Alis Build CLI](/guides/getting-started/command-line-interface) will be used and the following steps can be followed:
 
 1. Ensure the all the markdown files in the docs folder have been committed and pushed to the master branch;
 2. Ensure you have released the most up-to-date protos in terms of their content and commentary;

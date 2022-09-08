@@ -51,21 +51,21 @@ export default {
 							items: [
 								{
 									text: 'Conceptual framework',
-									link: '/references/core-concepts'
+									link: '/guides/getting-started/conceptual-framework'
 								},
 								{
 									text: 'Developer flow',
-									link: '/guides/build/overview'
+									link: '/guides/getting-started/developer-flow'
 								},
 								{
 									text: 'Consumer experience',
-									link: '/guides/consume/quick-start'
+									link: '/guides/getting-started/consumer-experience'
 								},
 							]
 						},
 						{
-							text: 'Install the Alis CLI',
-							link: '/guides/configuration/command-line-interface'
+							text: 'Alis CLI installation',
+							link: '/guides/getting-started/command-line-interface'
 						},
                     ]
 				},
@@ -75,15 +75,15 @@ export default {
 					items: [
 						{
 							text: 'Make a request to a product',
-							link: '/guides/consume/make-your-first-request'
+							link: '/guides/how-to-guides/make-your-first-request'
 						},
 						{
 							text: 'Leveraging auto-generated documentation',
-							link: '/guides/build/auto-generated-docs'
+							link: '/guides/how-to-guides/auto-generated-docs'
 						},
 						{
 							text: 'Configure your IDE',
-							link: '/guides/configuration/set-up-your-favourite-IDE'
+							link: '/guides/how-to-guides/configure-your-IDE'
 						},
 					]
 				},
@@ -93,11 +93,11 @@ export default {
 					items: [
 						{
 							text: 'Resource-oriented design',
-							link: '/references/resource-oriented-design'
+							link: '/guides/references/resource-oriented-design'
 						},
 						{
 							text: "Core technologies",
-							link: '/references/other-resources/other-resources'
+							link: '/guides/references/core-technologies'
 						},
 					]
 				},

@@ -1,6 +1,6 @@
 ---
 title: Core Concepts
-next: /other-resources/other-resources.html
+
 ---
 
 # Conceptual framework
@@ -53,7 +53,7 @@ We are actively updating our documentation. This section will be available soon!
 ## Neuron
 
 A `neuron` resource represents the _unit of compute_ used by the parent `product`. Each `neuron` is either a
-_resource_ type or a _service_ type. The collection of `neurons` in a `product` - ie. the resources,
+_resource_ type or a _service_ type. The collection of `neurons` in a `product` - i.e. the resources,
 <a href="https://cloud.google.com/apis/design/standard_methods#:~:text=This%20chapter%20defines%20the%20concept%20of%20standard%20methods%2C%20which%20are%20List%2C%20Get%2C%20Create%2C%20Update%2C%20and%20Delete" target="_blank">
 methods on the resources</a> and the services (typically following <a href="https://cloud.google.com/apis/design/custom_methods" target="_blank">
 custom methods</a>) - provide all the functionality that a `product` requires to provide its offering.
@@ -66,15 +66,15 @@ A _deployment_ refers to an operational instance of a `product` on the cloud whi
 ### Product deployment
 
 A `product deployment` refers to the hardware infrastructure aspect of the product. As explained in the
-[product section](/references/core-concepts.html#product), the
+[product section](/guides/getting-started/conceptual-framework.html#product), the
 organisation's `proto` repository contains a directory for each product, in which the infrastructure requirements used
 within the neurons are specified.
 
 Before _deploying_ a `product`, it first needs to be _built_ (see `alis product build -h`), which increments the
-semantic versioning and applies the **product level** (ie. not those within the `neurons`) Terraform specification
+semantic versioning and applies the **product level** (i.e. not those within the `neurons`) Terraform specification
 within the `product` Google Cloud project.
 
-When a `product` is _deployed_ (see `alis product deploy -h`), the **product level** (ie. not those within the `neurons`)
+When a `product` is _deployed_ (see `alis product deploy -h`), the **product level** (i.e. not those within the `neurons`)
 Terraform files are used to apply the infrastructure specification, the end `product` being the deployment environment
 reflecting the specification in the `*.tf` files. Once deployed, each `product deployment` has its own _Google Cloud
 project_.

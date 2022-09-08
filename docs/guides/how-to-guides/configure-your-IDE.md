@@ -3,11 +3,10 @@ title: Set up your favourite IDE
 
 ---
 
-# Set up your favourite IDE
+# Configure your IDE
 
 To be a great developer you need great tools. In this guide we will walk you through setting up your choice of integrated development environment (IDE). This guide provides the steps to setting up either <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code (VS Code)</a> or <a href="https://www.jetbrains.com/go/" target="_blank">JetBrains GoLand</a>.
 
->To complete this guide you will have to install **alis.exchange** CLI, the core tool to manage all resources on **alis.exchange**. Follow the steps in the [command line interface](./command-line-interface.md) guide to install the CLI.
 ## Which IDE to choose?
 
 A few things to consider when choosing your IDE. VS Code and GoLand provides support for a wide range of languages including Go and therefore are the favourites amongst the **alis.exchange** community. VS Code being open source is completely free whereas GoLand has an annual license fee. Plugins have been built by the **alis.exchange** community for both IDEs, to create the best possible developer experience.
@@ -73,7 +72,7 @@ Unselect the option to `Configure automatically` and add the path to the Google 
 to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
-![](./img/aipLinterPreferences.png)
+![](img/aipLinterPreferences.png)
 
 
 ### Protocol Buffers Plugin
@@ -88,8 +87,8 @@ Select the *Configure Automatically* checkbox and *Apply*.
 While leaving the *JetBrains Protoeditor* directory path, add the path to the Google proto directory, _/Users/{YourUsername}/alis.exchange/google/proto_, to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
-![](./img/protocolBufferPreferences.png)
+![](img/protocolBufferPreferences.png)
 
-## Whats next?
+## What's next?
 
-Now that your IDE is setup and the **alis.exchange** CLI is installed, try your hand at [making your first request](../consume/make-your-first-request.md) to a product or [building your own product](../consume/make-your-first-request.md).
+Now that your IDE is set up and the **alis.exchange** CLI is installed, try your hand at [making your first request](make-your-first-request.md) to a product or [building your own product](make-your-first-request.md).

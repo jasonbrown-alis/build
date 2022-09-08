@@ -39,7 +39,7 @@ common developer toil by:
 - Auto-generating source code for the majority of popular languages including Go, Java, Python and more;
 - Auto-generating equivalent REST endpoints for gRPC services;
 - Setting API behaviour; and
-- Permissioning on a service level.
+- Permissions on a service level.
 
 Additionally, having a clear structure that enforces standards of naming and defining everything you build, and
 use to build, overcomes several organisational friction points in communicating what it is that anyone is busy with
