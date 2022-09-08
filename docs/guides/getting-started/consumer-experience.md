@@ -86,60 +86,52 @@ Experience the simplicity in accessing these methods in any of the supported lan
 We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.
 :::
 
-#### Make a request using Go
+<tabs>
+<tab name="Go">
 
 <a href="https://gitpod.io#snapshot/c1eafefa-0414-439e-a618-4089e1d50143" target="_blank">Preconfigured Go cloud IDE</a>
 
 1. Open up the terminal (Mac: `⌘ + j`, Windows: `ctrl + j` ).
 
-	>If the terminal is already open run `$ clear` to clear the terminal window.
-
+   >If the terminal is already open run `$ clear` to clear the terminal window.
 2. Make sure you are in the `playground` directory.
-
-	```bash
+```bash
 	cd workspace/playground
-	```
-
+```
 3. Run the code by running the terminal command:
-
-	```bash
+```bash
 	go run *.go
-	```
+```
 
-#### Get a feel for the **alis.exchange** experience
+### Get a feel for the **alis.exchange** experience
 
 Interested in trying something for yourself?
 
 We suggest creating your own function and incorporating a request to the `BooksClient`. Some suggestions of things to try:
 
-* Loop through all the books and print out the author.
-* Get a book and wrangle the response to be printed out in a sentence structure.
-* Use the response of `ListBooks` to make multiple `GetBook` requests.
+1. Loop through all the books and print out the author.
+2. Get a book and wrangle the response to be printed out in a sentence structure.
+3. Use the response of `ListBooks` to make multiple `GetBook` requests.
 
-```bash
-yarn add -D vitepress
-```
-
-
-
-#### Make a request using R
+</tab>
+<tab name="R">
 
 <a href="https://gitpod.io#snapshot/c858a081-f9e0-4791-9330-606a568df6fd" target="_blank">Preconfigured R cloud IDE</a>
 
 1. Open up the terminal (Mac: `⌘ + j`, Windows: `ctrl + j` ).
 
-	>If the terminal is already open run `$ clear` to clear the terminal window.
+   >If the terminal is already open run `$ clear` to clear the terminal window.
 
 2. Make sure you are in the `playground` directory.
 
 ```bash
-cd workspace/playground
+	cd workspace/playground
 ```
 
-3. Run the code
+	3. Run the code
 
 ```bash
-Rscript booksConsume.r
+	Rscript booksConsume.r
 ```
 
 #### Get a feel for the **alis.exchange** experience
@@ -148,11 +140,15 @@ Interested in trying something for yourself?
 
 We suggest creating your own function and incorporating a request to the `BooksClient`. Some suggestions of things to try:
 
-* Loop through all the books and print out the author.
-* Get a book and wrangle the response to be printed out in a sentence structure.
-* Use the response of `ListBooks` to make multiple `GetBook` requests.
+1. Loop through all the books and print out the author.
+2. Get a book and wrangle the response to be printed out in a sentence structure.
+3. Use the response of `ListBooks` to make multiple `GetBook` requests.
 
 If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/how-to-guides/make-your-first-request.md).
+
+  </tab>
+</tabs>
+
 ## Next Steps
 
 **Ready to join alis.exchange?** <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.

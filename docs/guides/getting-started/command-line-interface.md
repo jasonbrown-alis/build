@@ -40,8 +40,10 @@ Your Git needs to be configured with Google Cloud Source repositories. Credentia
 Check if this was successful by opening the `.gitcookies` file in Vim: `vim ~/.gitcookies`. If successful, the file should contain a `source.developers.google.com` entry.
 :::
 
+##  Installation
 
-## macOS/Linux Installation
+<tabs>
+<tab name="macOS/Linux">
 
 1. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
 
@@ -63,11 +65,11 @@ Not sure what your OS or ARCH is? Run `uname -a` to find out.
 
 ### List of available CLI binaries
 
-   | macOS        | Linux  |
+| macOS        | Linux  |
    | ------ | -----|
-   |   | [Linux Arm](https://files.cli.alis.services/linux/arm/latest/alis) |
-   | [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
-   | [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/arm64/latest/alis) |
+|   | [Linux Arm](https://files.cli.alis.services/linux/arm/latest/alis) |
+| [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
+| [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/arm64/latest/alis) |
 
 4. Place the file in your _alis.exchange/cli_ folder. Run the following command to give it execute permission:
 
@@ -84,9 +86,8 @@ Select open. This will allow macOS permission to always run the CLI, and therefo
 :::
 
 You have successfully installed the **alis.exchange** CLI!
-
-
-## Windows Installation
+</tab>
+<tab name="Windows">
 
 1. Open command prompt as administrator.
 2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
@@ -95,29 +96,33 @@ You have successfully installed the **alis.exchange** CLI!
 md %HOMEPATH%\alis.exchange\cli
 ```
 
-2. Add this folder to your `$PATH`:
+3. Add this folder to your `$PATH`:
 
 ```
 setx PATH "%PATH%;%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 ```
 
-3. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
+4. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
 
 ::: tip
-   Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
+Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 :::
 
 ### List of available CLI binaries
 
-   | Windows                                                                        |
+| Windows                                                                        |
    | ------- |
-   | [Windows Arm](https://files.cli.alis.services/windows/arm/4.0.96/alis.exe)     |
-   | [Windows Arm64](https://files.cli.alis.services/windows/arm64/4.0.96/alis.exe) |
-   | [Windows Amd64](https://files.cli.alis.services/windows/amd64/4.0.96/alis.exe) |
+| [Windows Arm](https://files.cli.alis.services/windows/arm/4.0.96/alis.exe)     |
+| [Windows Arm64](https://files.cli.alis.services/windows/arm64/4.0.96/alis.exe) |
+| [Windows Amd64](https://files.cli.alis.services/windows/amd64/4.0.96/alis.exe) |
 
-4. Place the file in your _alis.exchange/cli_ folder. Ensure the file name and extension is `alis.exe`.
+5. Place the file in your _alis.exchange/cli_ folder. Ensure the file name and extension is `alis.exe`.
 
-5. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
+6. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
+
+</tab>
+</tabs>
+
 
 
 You have successfully installed the **alis.exchange** CLI!
