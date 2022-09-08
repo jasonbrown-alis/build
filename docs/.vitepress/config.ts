@@ -58,7 +58,7 @@ export default {
                                     link: '/guides/build/overview'
                                 },
                                 {
-                                    text: 'Using Auto-generated Docs',
+                                    text: 'Leveraging auto-generated documentation',
                                     link: '/guides/build/auto-generated-docs'
                                 }
                             ]
