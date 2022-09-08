@@ -1,9 +1,9 @@
 ---
-title: Using Auto-generated Docs
+title: Leveraging auto-generated documentation
 next: "Consume: Quick start"
 ---
 
-# Leveraging the documentation service
+# Leveraging auto-generated documentation
 
 Alis Build OS provides out-of-the-box documentation for products built on the platform. This documentation consists of API reference documentation auto-generated directly from the protocol buffers, custom user guides and code samples which teams may compile to provide greater assistance to clients.
 
@@ -13,7 +13,7 @@ In this guide, we aim to give you the necessary background to leverage this docu
 **Before you start**
 1. [Download and install the Alis Build OS CLI](/guides/configuration/command-line-interface);
 2. Ensure you are part of an existing organisation and product on Build OS;
-3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`
+3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`.
 :::
 
 ## Overview
@@ -30,7 +30,7 @@ proto
 │       └── services/.../*.proto
 ```
 
-Once the documentation has been released, it will be publicly available at [https://docs.{productID}.{orgDomain}](https://docs.de.alis.services) (eg. [https://docs.de.alis.services](https://docs.de.alis.services).
+Once the documentation has been released, it will be publicly available at [https://docs.{productID}.{orgDomain}](https://docs.de.alis.services) (eg. [https://docs.de.alis.services](https://docs.de.alis.services)).
 
 ## Updating reference documentation
 
@@ -43,6 +43,7 @@ A current caveat is that the use of certain Markdown syntax in your comments may
 ## Writing guides and samples
 
 The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and `samples` sub-directories each containing an `index.md` directory.
+
 ```
 docs
 ├── index.md
@@ -51,13 +52,16 @@ docs
 ├── reference
 │   └── index.md
 └── samples
+│   └── index.md
 └── index.md
 ```
 
-You can customise the index.md for each section as you’d like, including the index.md at the root of the docs folder which is the landing page for your docs. You can create any subdirectories you desire within the provided `guides`, `reference` and `samples` subdirectories. The generated docs will then provide sections and pages that directly reflect your folder structure and markdown files. For example:
+The `index.md` file at the root directory, serves as the landing page for the documentation site and can be customised using the (VitePress Home Page theme)[https://vitepress.vuejs.org/guide/theme-home-page#home-page]. The other `index.md` files is the respective page that will be opened when the `guides`, `reference` and `samples` navigation tab is opened on the site.
+
+Any subdirectory added under `guides` and `samples` will be converted into a heading in the documentation navigation sidebar, it's depth being determined by the file structure. Markdown files can then be placed inside either the root or any of the subdirectories of `guides` and `samples` and will be added to the documentation sidebar. An example file structure and the resulting documentation navigation sidebar for the `guides` section is depicted below.
+
 
 ```
-.
 ├── guides
 │   ├── how-to-guides
 │   │   ├── first_screening.md
@@ -77,21 +81,54 @@ You can customise the index.md for each section as you’d like, including the i
 ├── reference
 │   └── index.md
 └── samples
-├── code_sample_1.md
-└── index.md
+    ├── code_sample_1.md
+    ├── index.md
 ```
 ![](./img/docs-folder-structure.png)
 
-An important thing, to note however, is that the title of the individual markdown files does not map to the name of the .md file. It rather makes use of the YAML Frontmatter defined in the .md file. In `first_screening.md` for example, the YAML Frontmatter would be:
+
+The titles used in the sidebar is derived from the `title` field in the [file's YAML Frontmatter](https://vitepress.vuejs.org/guide/frontmatter). For example, the `guides/how-to-guides/first_screening.md` file, the YAML Frontmatter would be:
+
 ```yaml
 ---
 title: Conduct your first screening
 ---
-```
-And the content of the article would follow afterwards. Since our documentation makes use of Vitepress behind the scenes, you can get more information about YAML Frontmatter and Vitepress at https://vitepress.vuejs.org
 
-## Deploying your documentation
-1. Once you are happy with the state of your markdown files in the docs folder, push your changes to master.
-2. Ensure you have released the most up-to-date protos in terms of their content and commentary
-3. Run `alis docs release {orgID}.{productID}`
+{Your file content}
+...
+```
+
+Content to be generated on the documentation page should follow the Frontmatter.
+
+::: tip
+Since our documentation uses [VitePress](https://vitepress.vuejs.org/) under the hood, you can leverage the functionality of VitePress [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown) and to get the most out of your documentation.
+:::
+
+
+## Deploying documentation
+
+Alis Build OS runs a nightly build and release of all product documentation as well as provides a means to manually update documentation. These are discussed in the following sections.
+
+### Auto-generated nightly release
+
+The nightly build of all product documentation will reflect:
+1. The reference documentation of the last released protocol buffers;
+2. The state of the documentation in the repo's `master` branch when the build is kicked off.
+
+::: Warning
+It is essential that documentation that is present in the master branch is production ready.
+:::
+
+### Manual release
+
+Cases exist where teams may want to deploy a new version of the documentation, such as: adding new documentation pages, updating protocol buffers or making fixes to existing pages. To run a manual release, the [Alis Build CLI](/guides/configuration/command-line-interface) will be used and the following steps can be followed:
+
+1. Ensure the all the markdown files in the docs folder have been committed and pushed to the master branch;
+2. Ensure you have released the most up-to-date protos in terms of their content and commentary;
+3. In your terminal, run the `alis docs release` command and specify the product (`{orgID}.{productID}`). Example:
+
+```bash
+$ alis docs release play.dm
+```
+ 
 4. The documentation will be available at: https://docs.{productID}.{orgDomain}(https://docs.de.alis.services)
