@@ -19,14 +19,14 @@ Before you install the **alis.exchange** CLI, install the following prerequisite
 
 ### Google Cloud SDK
 
-The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to **alis.exchange**.  
+The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to **alis.exchange**.
 
 1. Install the latest version of Cloud SDK for your device by following the [instructions](https://cloud.google.com/sdk/docs/install).
 2. Run `gcloud auth login` from your terminal to authenticate your local environment with Google user account via a web-based authorization flow.
     *NOTE* Ensure that you login using your account associated with alis.exchange.
 3. Run `gcloud auth application-default login` to acquire new user credentials to use for Application Default Credentials ([ADC](https://developers.google.com/identity/protocols/application-default-credentials)). These are used in calling Google APIs.
 
-           
+
 ### Git
 
 Git may already be installed on your device. Check by running `git --version`. A successful response should look similar to `git version 2.30.0`. If the command was not found, follow the [installation instructions](https://www.atlassian.com/git/tutorials/install-git).
@@ -64,7 +64,7 @@ echo 'export PATH=$PATH:~/alis.exchange/cli' >> ~/.zshrc
       | ------ | -----|
    |   | [Linux Arm](https://files.cli.alis.services/linux/arm/latest/alis) |
    | [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
-   | [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/arm64/latest/alis) | 
+   | [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/arm64/latest/alis) |
 
 4. Place the file in your _alis.exchange/cli_ folder. Run the following command to give it execute permission:
 
@@ -74,7 +74,11 @@ chmod a+x $HOME/alis.exchange/cli/alis
 
 5. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
 
-   > 🚩 For MacOs, open the CLI by right clicking on the file and open. This will prompt you 'The application is from an unidentified developer. Are you sure you want to open it?'. Select open. This will allow MacOs permission to always run the CLI and therefore you only have to do it with your initial installation.
+::: warning **Unidentified developer error?**
+For MacOs, open the CLI by right clicking on the file and open. This will prompt you _The application is from an unidentified developer. Are you sure you want to open it?_.
+
+Select open. This will allow MacOs permission to always run the CLI and therefore you only have to do it with your initial installation.
+:::
 
 You have successfully installed the **alis.exchange** CLI!
 
@@ -100,12 +104,12 @@ setx PATH "%PATH%;%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 
    ### List of available CLI binaries
 
-   | Windows                                                                        | 
+   | Windows                                                                        |
    | ------- |
    | [Windows Arm](https://files.cli.alis.services/windows/arm/4.0.96/alis.exe)     |
    | [Windows Arm64](https://files.cli.alis.services/windows/arm64/4.0.96/alis.exe) |
    | [Windows Amd64](https://files.cli.alis.services/windows/amd64/4.0.96/alis.exe) |
-   
+
 4. Place the file in your _alis.exchange/cli_ folder. Ensure the file name and extension is `alis.exe`.
 
 5. Close and restart all currently open terminal windows, including IDEs, such that the configurations of the paths can take place.
@@ -118,7 +122,7 @@ You have successfully installed the **alis.exchange** CLI!
 ### Try out alis_ CLI
 
 ```bash
-# Show help 
+# Show help
 alis -h
 
 # list available organisations

@@ -9,8 +9,7 @@ Alis Build OS provides out-of-the-box documentation for products built on the pl
 
 In this guide, we aim to give you the necessary background to leverage this documentation service.
 
-::: tip
-**Before you start**
+::: tip **Before you start**
 1. [Download and install the Alis Build OS CLI](/guides/configuration/command-line-interface);
 2. Ensure you are part of an existing organisation and product on Build OS;
 3. Have pulled the latest version of your organisation's protos by running `alis org get {yourOrg}`.

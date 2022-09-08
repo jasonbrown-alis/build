@@ -26,7 +26,7 @@ What is important from a practical perspective however is that:
 
 Two things to take note of:
 
-1. Defining things is the first, essential part of building on **alis.exchange**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file. 
+1. Defining things is the first, essential part of building on **alis.exchange**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
 Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/references/other-resources/other-resources.md).
@@ -84,6 +84,9 @@ Now that we know what resource is available, `Book`, and what we are able to do 
 
 Experience the simplicity in accessing these methods in any of the supported languages in using one of our preconfigured cloud IDEs:
 
+::: warning
+We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.
+:::
 
 #### Make a request using Go
 

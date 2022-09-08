@@ -5,6 +5,10 @@ sidebarDepth: 0
 
 # Make a request to a product in your local environment
 
+::: warning
+We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.
+:::
+
 > 🚩 This section is supplementary to the [quick start](./quick-start.md). We recommend that you first complete the quickstart before attempting this section.
 
 Given the underlying technologies used, **alis.exchange** provides the ability to generate client libraries for various
