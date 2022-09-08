@@ -42,7 +42,7 @@ A current caveat is that the use of certain Markdown syntax in your comments may
 
 ## Writing guides and samples
 
-The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and `samples` sub-directories each containing an `index.md` directory.
+The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `` file at the root of `docs` as well as `guides`, `reference` and `samples` sub-directories each containing an `` directory.
 ```
 docs
 ├── index.md
@@ -54,7 +54,7 @@ docs
 └── index.md
 ```
 
-You can customise the index.md for each section as you’d like, including the index.md at the root of the docs folder which is the landing page for your docs. You can create any subdirectories you desire within the provided `guides`, `reference` and `samples` subdirectories. The generated docs will then provide sections and pages that directly reflect your folder structure and markdown files. For example:
+You can customise the `index.md` for each section as you’d like, including the `index.md` at the root of the docs folder which is the landing page for your docs. You can create any subdirectories you desire within the provided `guides`, `reference` and `samples` subdirectories. The generated docs will then provide sections and pages that directly reflect your folder structure and markdown files. For example:
 
 ```
 .
