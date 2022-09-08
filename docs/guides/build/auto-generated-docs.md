@@ -36,7 +36,7 @@ Once the documentation has been released, it will be publicly available at [http
 
 The reference documentation component is generated from the proto files. The emphasis on the definition first-approach ensures that the effort is focussed on the design of the protos with detailed comments above the various services, methods, messages and fields and this design is then propagated into the reference documentation for the APIs.
 
-::: danger 
+::: danger
 A current caveat is that the use of certain Markdown syntax in your comments may result in invalid Markdown syntax in the generated documentation, causing the build of your documentation to fail. This is primarily the usage of the “|” character in your proto comments as well as using line breaks in links.
 :::
 
@@ -130,5 +130,5 @@ Cases exist where teams may want to deploy a new version of the documentation, s
 ```bash
 $ alis docs release play.dm
 ```
- 
+
 4. The documentation will be available at: https://docs.{productID}.{orgDomain}(https://docs.de.alis.services)
