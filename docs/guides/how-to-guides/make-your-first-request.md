@@ -11,7 +11,7 @@ We are in the process of building out new examples and moving over the existing 
 
 > 🚩 This section is supplementary to the [consumer experience](../getting-started/consumer-experience.md). We recommend completing it before attempting this section.
 
-Given the underlying technologies used, **Build OS** provides the ability to generate client libraries for various
+Given the underlying technologies used, the platform provides the ability to generate client libraries for various
 supported programing languages. For users of the product, it allows you to programmatically access products natively in your
 code without having to wrangle obscure, unpredictable data objects (see the [consumer experience](../getting-started/consumer-experience.md)).
 

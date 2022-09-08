@@ -5,7 +5,7 @@ title: Core Concepts
 
 # Conceptual framework
 
-**Alis Build OS** makes use os a collection of resources that follow the best practices of resource-oriented design.
+The Alis Build platform makes use os a collection of resources that follow the best practices of resource-oriented design.
 These resources are used to elegantly integrate the cloud technologies that make up the platform.
 
 The three major resources can be communicated together as an `organisation` having one or more `product`,
@@ -14,7 +14,7 @@ consisting of one or more `protocol buffer`, which is implemented in a `neuron`.
 
 ## Organisation
 
-An `organisation` represents the top-level resource on **Build OS**.
+An `organisation` represents the top-level resource on the platform.
 
 - _Conceptually_, all `products` built on the platform belong to a specific `organisation`.
 - _Practically_, an `organisation`:
@@ -102,7 +102,7 @@ specification will typically contain services which point to the image in the ar
 running `alis neuron build ...`.
 
 A `product deployment` may consist of all the `neurons` within a `product` or a subset thereof. Common patterns
-have emerged from builders on **Alis Build OS** which are discussed in the following section.
+have emerged from builders on the Alis Build platform which are discussed in the following section.
 
 ## Common deployment patterns
 

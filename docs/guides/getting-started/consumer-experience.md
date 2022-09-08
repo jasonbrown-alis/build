@@ -3,9 +3,9 @@ title: Consumer experience
 ---
 # Consumer experience
 
-We aim to ensure that the way software across the **Alis Build** platform operates, communicates and integrates is simple and consistent. Whether you are getting results from a model, updating a database or executing trades, all of these actions should feel familiar. This allows you to seamlessly adopt anything across the platform without spending hours in obscure documentation and the toil of attempting to integrate it in your code.
+We aim to ensure that the way software across the Alis Build platform operates, communicates and integrates is simple and consistent. Whether you are getting results from a model, updating a database or executing trades, all of these actions should feel familiar. This allows you to seamlessly adopt anything across the platform without spending hours in obscure documentation and the toil of attempting to integrate it in your code.
 
-What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience **Alis Build OS** for yourself. Below is a teaser of what you can expect 😉.
+What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience the Alis Build platform for yourself. Below is a teaser of what you can expect 😉.
 
 ![](img/quick-start-autocomplete1.gif)
 
@@ -14,7 +14,7 @@ What does that experience feel like? In this section, we want to provide you wit
 
 ## Definition-first approach
 
-**Build OS** leverages a core set of open-source technologies, all certified by the [Cloud Native Computing Foundation](https://www.cncf.io/). An essential part of how we make **Build OS** work is the strict adoption of [Protocol Buffers](https://developers.google.com/protocol-buffers), also referred to as *Protobufs*.
+The Alis Build platform leverages a core set of open-source technologies, all certified by the [Cloud Native Computing Foundation](https://www.cncf.io/). An essential part of how we make the platform work is the strict adoption of [Protocol Buffers](https://developers.google.com/protocol-buffers), also referred to as *Protobufs*.
 
 From a technical perspective:
 > Protocol buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured data. [Source](https://developers.google.com/protocol-buffers)
@@ -24,10 +24,10 @@ What is important from a practical perspective however is that:
 
 Two things to take note of:
 
-1. Defining things is the first, essential part of building on **Build OS**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
+1. Defining things is the first, essential part of building on the Alis Build OS platform. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
-Find out more about Protobufs, their usage and benefits on **Build OS** in the [supplementary material](/guides/references/core-technologies.md).
+Find out more about Protobufs, their usage and benefits on the platform in the [core technologies article](/guides/references/core-technologies.md).
 
 
 ## Experience the simplicity
@@ -103,7 +103,7 @@ We are in the process of building out new examples and moving over the existing 
 	go run *.go
 ```
 
-#### Get a feel for the **Build OS** experience
+#### Get a feel for the Alis Build experience
 
 Interested in trying something for yourself?
 
@@ -134,7 +134,7 @@ We suggest creating your own function and incorporating a request to the `BooksC
 	Rscript booksConsume.r
 ```
 
-#### Get a feel for the **Build OS** experience
+#### Get a feel for the Alis Build experience
 
 Interested in trying something for yourself?
 
@@ -146,9 +146,9 @@ We suggest creating your own function and incorporating a request to the `BooksC
 
 If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/how-to-guides/make-your-first-request.md).
 
-  </tab>
+</tab>
 </tabs>
 
 ## Next Steps
 
-**Ready to join alis.exchange?** <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.
+**Ready to join Alis Build?** <a href="https://alis.exchange/signup" target="_blank">Get in touch</a>.

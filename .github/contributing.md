@@ -1,6 +1,6 @@
-# Contributing to alis.exchange Documentation
+# Contributing to alis.build
 
-We believe high quality documentation helps shape a positive relationship between users and the alis.exchange ecosystem. The purpose of this ever-evolving guide is to provide rules and recommendations to maintain and improve the documentation in a consistent fashion. All contributions are manged through pull requests (PR). In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+We believe high quality documentation helps shape a positive relationship between users and the Alis Build ecosystem. The purpose of this ever-evolving guide is to provide rules and recommendations to maintain and improve the documentation in a consistent fashion. All contributions are manged through pull requests (PR). In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
 ## Getting started
 
@@ -53,7 +53,7 @@ $ npm run docs:dev
 
 ## Merging your PR
 
-Once we have reviewed your PR we will merge it into the original repo and your're changes will be visible on <a href="https://docs.alis.exchange" target="_blank">doc.alis.exchange</a>   :tada:.
+Once we have reviewed your PR we will merge it into the original repo and your're changes will be visible on <a href="https://alis.build" target="_blank">alis.build</a>   :tada:.
 
 ## Working on the content
 

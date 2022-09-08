@@ -4,7 +4,7 @@ title: Command Line Interface
 
 # Alis CLI Installation
 
-The **Build OS** command-line interface (CLI) is a powerful tool for managing resources on **Build OS**.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
+The Alis command-line interface (CLI) is a powerful tool for managing resources on the Alis Build platform.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
 
 - Create a new product / organisation;
 - Deploy new versions of your product;
@@ -13,15 +13,15 @@ The **Build OS** command-line interface (CLI) is a powerful tool for managing re
 
 ## Install Prerequisites
 
-Before you install the **Build OS** CLI, install the following prerequisites:
+Before you install the Alis CLI, install the following prerequisites:
 
 ### Google Cloud SDK
 
-The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to **Build OS**.
+The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to the platform.
 
 1. Install the latest version of Cloud SDK for your device by following the [instructions](https://cloud.google.com/sdk/docs/install).
 2. Run `gcloud auth login` from your terminal to authenticate your local environment with Google user account via a web-based authorization flow.
-    *NOTE* Ensure that you login using your account associated with alis.exchange.
+    *NOTE* Ensure that you login using your account associated with the Alis Build platform.
 3. Run `gcloud auth application-default login` to acquire new user credentials to use for Application Default Credentials ([ADC](https://developers.google.com/identity/protocols/application-default-credentials)). These are used in calling Google APIs.
 
 
@@ -45,7 +45,7 @@ Check if this was successful by opening the `.gitcookies` file in Vim: `vim ~/.g
 <tabs>
 <tab name="macOS/Linux">
 
-1. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
+1. Run the following command to create an _alis.exchange_ folder in your home directory with a sub-folder _cli_.
 
 ```bash
 mkdir -p ~/alis.exchange/cli
@@ -125,7 +125,7 @@ Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 
 
 
-You have successfully installed the **alis.exchange** CLI!
+You have successfully installed the Alis CLI!
 
 
 
