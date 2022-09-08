@@ -3,7 +3,16 @@
 	--vp-c-brand-light: #ffcdd2;
 	--vp-c-brand-dark: #950000;
 	--vp-c-brand-darker: #950000;
+
+	/* --vp-c-black-soft: #27323A; */
+
+	--vp-code-block-bg: var(--vp-c-bg-alt);
+
 	--vp-font-family-base: "Roboto", sans-serif !important;
+}
+
+.vp-doc [class*='language-'] > span.lang{
+	color: var(--vp-c-text-2);
 }
 .vp-doc h1{
 	font-weight: lighter;
@@ -21,6 +30,9 @@
 	font-weight: lighter;
 }
 .vp-doc strong{
+	font-weight: normal;
+}
+.vp-doc b{
 	font-weight: normal;
 }
 .vp-doc li{
