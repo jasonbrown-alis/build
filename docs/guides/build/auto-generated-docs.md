@@ -30,7 +30,7 @@ proto
 │       └── services/.../*.proto
 ```
 
-Once the documentation has been released, it will be publicly available at [https://{orgID}.{productID}.{orgDomain}]() (eg. [https://docs.de.alis.services](https://docs.de.alis.services).
+Once the documentation has been released, it will be publicly available at [https://docs.{productID}.{orgDomain}](https://docs.de.alis.services) (eg. [https://docs.de.alis.services](https://docs.de.alis.services).
 
 ## Updating reference documentation
 
@@ -42,7 +42,7 @@ A current caveat is that the use of certain Markdown syntax in your comments may
 
 ## Writing guides and samples
 
-The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and ‘samples’ sub-directories each containing an `index.md` directory.
+The initial state (after a product creation) of the `docs` directory should resemble the folder structure depicted below, ie. must then have an `index.md` file at the root of `docs` as well as `guides`, `reference` and `samples` sub-directories each containing an `index.md` directory.
 ```
 docs
 ├── index.md
@@ -94,4 +94,4 @@ And the content of the article would follow afterwards. Since our documentation 
 1. Once you are happy with the state of your markdown files in the docs folder, push your changes to master.
 2. Ensure you have released the most up-to-date protos in terms of their content and commentary
 3. Run `alis docs release {orgID}.{productID}`
-4. The documentation will be available at: [https://{orgID}.{productID}.{orgDomain}]()
+4. The documentation will be available at: https://docs.{productID}.{orgDomain}(https://docs.de.alis.services)
