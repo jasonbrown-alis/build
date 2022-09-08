@@ -60,6 +60,10 @@ export default {
                                     text: 'Overview',
                                     link: '/guides/build/overview'
                                 },
+                                {
+                                    text: 'Leveraging auto-generated documentation',
+                                    link: '/guides/build/auto-generated-docs'
+                                }
                             ]
                         },
                         {
