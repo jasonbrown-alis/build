@@ -5,29 +5,29 @@ title: Core Concepts
 
 # Conceptual framework
 
-**alis.exchange** has a collection of resources that follow the best practices of resource-oriented design.
-These resources are used to elegantly integrate cloud technologies that make up the **alis.exchange** platform.
+**Alis Build OS** makes use os a collection of resources that follow the best practices of resource-oriented design.
+These resources are used to elegantly integrate the cloud technologies that make up the platform.
 
 The three major resources can be communicated together as an `organisation` having one or more `product`,
-consisting of one or more `protocol buffer`, implemented in a `neuron`. Additionally, `products` have `deployments`, which consists of all, or a subset, of the
+consisting of one or more `protocol buffer`, which is implemented in a `neuron`. Additionally, `products` have `deployments`, which consists of all, or a subset, of the
 `neurons`.
 
 ## Organisation
 
-An `organisation` resource represents the top-level resource on **alis.exchange**.
+An `organisation` represents the top-level resource on **Build OS**.
 
-- _Conceptually_, all `products` built on the exchange belong to a specific `organisation`.
+- _Conceptually_, all `products` built on the platform belong to a specific `organisation`.
 - _Practically_, an `organisation`:
 	- Is responsible for billing.
 	- Owns and manages users in the organisation along with access management.
-	- Has a monorepo in which all resource and service definitions as well as infrastructure specification contained.
+	- Has a monorepo in which all resource and service definitions as well as infrastructure specification is contained.
 
 ## Product
 
-A `product` resource represents a digital product built on **alis.exchange**. The majority of these adopt an API-first strategy.
+A `product` resource represents a digital product built on the platform. The majority of these adopt an [API-first strategy](https://swagger.io/resources/articles/adopting-an-api-first-approach/).
 
 - _Conceptually_, a `product` is the thing which is offered to the world, whether for usage within an `organisation` or
-  as a B2B/B2C product.
+  for an external business or consumer.
 - _Practically_, the `product`:
 	- Has its own Google Cloud project.
 	- Has a repo in which the source code for the `product` is contained.
@@ -36,12 +36,12 @@ A `product` resource represents a digital product built on **alis.exchange**. Th
 	- Manages access to the deployments of the `product`. This may be on an individual or group level.
 	- Will specify the various APIs and infrastructure required by the children `neurons` through using [Terraform](https://www.terraform.io/docs).
 
-Example `products` on alis.exchange built by <a href="https://alis.capital" target="_blank">alis</a> include:
+Example `products` built by [alis](https://alpha.alisx.com/products) include:
 - `DE`: _Data Engineering_, responsible for synchronising data from external sources.
 - `CP`: _Compliance_, a fast and flexible framework for accurate portfolio compliance at scale.
 
-Furthermore, **alis.exchange** itself is a product, `EX`, which delivers its value through leveraging other products
-such as `OS`, the _operating system_ facilitating all the resource **alis.exchange** resource management; and `CL`, the
+**Build PS** delivers its value by leveraging other products
+such as `OS`, the _operating system_ facilitating the management of all the resources on the platform; and `CL`, the
 _command-line interface_ which provides a means to interact with `OS` from your terminal.
 
 ## Protocol Buffer
@@ -58,6 +58,11 @@ _resource_ type or a _service_ type. The collection of `neurons` in a `product` 
 methods on the resources</a> and the services (typically following <a href="https://cloud.google.com/apis/design/custom_methods" target="_blank">
 custom methods</a>) - provide all the functionality that a `product` requires to provide its offering.
 
+::: info **Interesting Fact**
+The word **neuron** was inspired by the neurons which exist in our brain. Like the billions of neurons in our brain, which all work independently in this complex network to achieve a single goal,
+the alis neurons all work together independently in a network of microservices to achieve the goal of their product and organisation.
+:::
+
 ## Deployments
 
 A _deployment_ refers to an operational instance of a `product` on the cloud which clients would interact with. Under the hood this consists of both
@@ -70,7 +75,7 @@ A `product deployment` refers to the hardware infrastructure aspect of the produ
 organisation's `proto` repository contains a directory for each product, in which the infrastructure requirements used
 within the neurons are specified.
 
-Before _deploying_ a `product`, it first needs to be _built_ (see `alis product build -h`), which increments the
+Before _deploying_ a `product`, it first needs to be _released_ (see `alis product release -h`), which increments the
 semantic versioning and applies the **product level** (i.e. not those within the `neurons`) Terraform specification
 within the `product` Google Cloud project.
 
@@ -84,7 +89,7 @@ project_.
 A `neuron deployment` refers to a specific version of a `neuron` that is operational within a specific `product deployment`,
 thereby being a _child resource_ of a `product deployment`.
 
-Before _deploying_ a `neuron`, it first needs to be _built_ (see `alis neuron build -h`). During the build process,
+Before _deploying_ a `neuron`, it first needs to be _released_ (see `alis neuron release -h`). During the build process,
 the semantic versioning is incremented and deployment package is created from the source code and the Terraform specification:
 1. The hash of the latest commit is captured such as to have a snapshot of the Terraform specification at the
    point in time the `build` was called.
@@ -97,9 +102,9 @@ specification will typically contain services which point to the image in the ar
 running `alis neuron build ...`.
 
 A `product deployment` may consist of all the `neurons` within a `product` or a subset thereof. Common patterns
-have emerged from builders on **alis.exchange** which are discussed in the following section.
+have emerged from builders on **Alis Build OS** which are discussed in the following section.
 
-### Common deployment patterns
+## Common deployment patterns
 
 To demonstrate the three most typical deployment patterns, consider the example, depicted in the image, of a `product`
 consisting of three `neurons`.

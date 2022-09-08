@@ -4,7 +4,7 @@ title: Command Line Interface
 
 # Alis CLI Installation
 
-The **alis.exchange** command-line interface (CLI) is a powerful tool for managing resources on **alis.exchange**.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
+The **Build OS** command-line interface (CLI) is a powerful tool for managing resources on **Build OS**.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
 
 - Create a new product / organisation;
 - Deploy new versions of your product;
@@ -13,11 +13,11 @@ The **alis.exchange** command-line interface (CLI) is a powerful tool for managi
 
 ## Install Prerequisites
 
-Before you install the **alis.exchange** CLI, install the following prerequisites:
+Before you install the **Build OS** CLI, install the following prerequisites:
 
 ### Google Cloud SDK
 
-The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to **alis.exchange**.
+The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to **Build OS**.
 
 1. Install the latest version of Cloud SDK for your device by following the [instructions](https://cloud.google.com/sdk/docs/install).
 2. Run `gcloud auth login` from your terminal to authenticate your local environment with Google user account via a web-based authorization flow.
@@ -130,6 +130,6 @@ You have successfully installed the **alis.exchange** CLI!
 # Show help
 alis -h
 
-# list available organisations
-alis org list
+# list the products for your organisation
+alis product list {yourOrg}
 ```

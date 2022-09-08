@@ -9,10 +9,10 @@ sidebarDepth: 0
 We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.
 :::
 
-> 🚩 This section is supplementary to the [consumer experience](../getting-started/consumer-experience.md). We recommend that you first complete the quickstart before attempting this section.
+> 🚩 This section is supplementary to the [consumer experience](../getting-started/consumer-experience.md). We recommend completing it before attempting this section.
 
-Given the underlying technologies used, **alis.exchange** provides the ability to generate client libraries for various
-supported coding languages. For users of the product, it allows you to programmatically access products natively in your
+Given the underlying technologies used, **Build OS** provides the ability to generate client libraries for various
+supported programing languages. For users of the product, it allows you to programmatically access products natively in your
 code without having to wrangle obscure, unpredictable data objects (see the [consumer experience](../getting-started/consumer-experience.md)).
 
 Irrespective of the language, this is done in two steps:
@@ -137,7 +137,7 @@ message ListBooksResponse {
 
 We will be making requests to both the `ListBooks` and `GetBook` method by following the two steps provided in the introduction section.
 
-### 1. Establish the client connection
+## 1. Establish the client connection
 
 Prior to making the requests, a client connection needs to be established to the server.
 
@@ -183,7 +183,7 @@ func init() {
 	// Typical predefined values are:
 	//  - region: "ew"
 	//	- port: "443"
-	serverHost := "resources-books-v1-z5x5ywf7za-ew-443.a.run.app"
+	serverHost := "resources-books-v1-z5x5ywf7za-ew.a.run.app:443"
 
 	// Initialise connection to the books service.
 	conn, err := NewConn(context.Background(), serverHost, false)
@@ -228,7 +228,7 @@ func NewConn(ctx context.Context, host string, insecure bool) (*grpc.ClientConn,
 }
 ```
 
-### 2. Make a request
+## 2. Make a request
 
 The `booksClient` provides you all the methods available, with descriptions of the methods and a specification of what
 the request and responses are. Most IDEs allow you to explore these by hovering over client and method names, similar to
@@ -238,7 +238,7 @@ Let us make our requests.
 
 #### List books
 
-Firstly we will get a list of all the books calling the `ListBooks` methods and then print their display names in the console.
+Firstly we will get a list of all the books by calling the `ListBooks` method and then print their display names in the console.
 
 Add the `printBookNames` function to the bottom of your Go file and make a call to the function from `main`.
 
@@ -309,7 +309,7 @@ func printBookDetails(bookName string) (string, error) {
 
 ### Full code example
 
-The complete code for both examples are available below.
+The complete code for both examples is available below.
 
 
 ::: details Click here to view full code example.

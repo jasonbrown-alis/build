@@ -3,9 +3,9 @@ title: Consumer experience
 ---
 # Consumer experience
 
-We aim to ensure that how software across **alis.exchange** operates, communicates and integrates is simple and consistent. Whether you are getting results from a model, updating a database or executing trades, all of these actions should feel familiar. This allows you to seamlessly adopt anything across **alis.exchange** without spending hours in obscure documentation and the toil of attempting to integrate it in your code.
+We aim to ensure that the way software across the **Alis Build** platform operates, communicates and integrates is simple and consistent. Whether you are getting results from a model, updating a database or executing trades, all of these actions should feel familiar. This allows you to seamlessly adopt anything across the platform without spending hours in obscure documentation and the toil of attempting to integrate it in your code.
 
-What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience **alis.exchange** for yourself. Below is a teaser of what you can expect 😉.
+What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience **Alis Build OS** for yourself. Below is a teaser of what you can expect 😉.
 
 ![](img/quick-start-autocomplete1.gif)
 
@@ -14,7 +14,7 @@ What does that experience feel like? In this section, we want to provide you wit
 
 ## Definition-first approach
 
-**alis.exchange** leverages a core set of open-source technologies, all certified by the [Cloud Native Computing Foundation](https://www.cncf.io/). An essential part of how we make **alis.exchange** work is the strict adoption of [Protocol Buffers](https://developers.google.com/protocol-buffers), also referred to as *Protobufs*.
+**Build OS** leverages a core set of open-source technologies, all certified by the [Cloud Native Computing Foundation](https://www.cncf.io/). An essential part of how we make **Build OS** work is the strict adoption of [Protocol Buffers](https://developers.google.com/protocol-buffers), also referred to as *Protobufs*.
 
 From a technical perspective:
 > Protocol buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured data. [Source](https://developers.google.com/protocol-buffers)
@@ -24,10 +24,10 @@ What is important from a practical perspective however is that:
 
 Two things to take note of:
 
-1. Defining things is the first, essential part of building on **alis.exchange**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
+1. Defining things is the first, essential part of building on **Build OS**. Everything that you will be working with (*resources*) and what you will be doing (*services*) is defined once in a `.proto` file.
 2. The definitions of these resources and services are then used to generate source code in the language of your choice to implement, or work with, the resources and services you defined.
 
-Find out more about Protobufs, their usage and benefits on **alis.exchange** in the [supplementary material](/guides/references/core-technologies.md).
+Find out more about Protobufs, their usage and benefits on **Build OS** in the [supplementary material](/guides/references/core-technologies.md).
 
 
 ## Experience the simplicity
@@ -82,11 +82,11 @@ Now that we know what resource is available, `Book`, and what we are able to do 
 
 Experience the simplicity in accessing these methods in any of the supported languages in using one of our preconfigured cloud IDEs:
 
-::: warning
+::: warning **Warning**
 We are in the process of building out new examples and moving over the existing demo services. The examples below may therefore result in errors when making requests.
 :::
 
-#### Make a request using Go
+## Make a request using Go
 
 <a href="https://gitpod.io#snapshot/c1eafefa-0414-439e-a618-4089e1d50143" target="_blank">Preconfigured Go cloud IDE</a>
 
@@ -106,7 +106,7 @@ We are in the process of building out new examples and moving over the existing 
 	go run *.go
 	```
 
-#### Get a feel for the **alis.exchange** experience
+#### Get a feel for the **Build OS** experience
 
 Interested in trying something for yourself?
 
@@ -116,13 +116,7 @@ We suggest creating your own function and incorporating a request to the `BooksC
 * Get a book and wrangle the response to be printed out in a sentence structure.
 * Use the response of `ListBooks` to make multiple `GetBook` requests.
 
-```bash
-yarn add -D vitepress
-```
-
-
-
-#### Make a request using R
+## Make a request using R
 
 <a href="https://gitpod.io#snapshot/c858a081-f9e0-4791-9330-606a568df6fd" target="_blank">Preconfigured R cloud IDE</a>
 
