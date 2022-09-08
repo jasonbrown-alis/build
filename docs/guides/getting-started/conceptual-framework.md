@@ -5,7 +5,7 @@ title: Core Concepts
 
 # Conceptual framework
 
-The Alis Build platform makes use os a collection of resources that follow the best practices of resource-oriented design.
+The Alis Build platform leverages a collection of resources that follow the best practices of resource-oriented design.
 These resources are used to elegantly integrate the cloud technologies that make up the platform.
 
 The three major resources can be communicated together as an `organisation` having one or more `product`,
@@ -27,7 +27,7 @@ An `organisation` represents the top-level resource on the platform.
 A `product` resource represents a digital product built on the platform. The majority of these adopt an [API-first strategy](https://swagger.io/resources/articles/adopting-an-api-first-approach/).
 
 - _Conceptually_, a `product` is the thing which is offered to the world, whether for usage within an `organisation` or
-  for an external business or consumer.
+  as a B2B/B2C product.
 - _Practically_, the `product`:
 	- Has its own Google Cloud project.
 	- Has a repo in which the source code for the `product` is contained.
@@ -40,7 +40,7 @@ Example `products` built by [alis](https://alpha.alisx.com/products) include:
 - `DE`: _Data Engineering_, responsible for synchronising data from external sources.
 - `CP`: _Compliance_, a fast and flexible framework for accurate portfolio compliance at scale.
 
-**Build PS** delivers its value by leveraging other products
+Furthermore, the Alis Build platform delivers its value by leveraging other products
 such as `OS`, the _operating system_ facilitating the management of all the resources on the platform; and `CL`, the
 _command-line interface_ which provides a means to interact with `OS` from your terminal.
 

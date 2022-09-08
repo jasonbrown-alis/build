@@ -72,7 +72,7 @@ This single source of truth also sets the foundation for additional auto-generat
 
 ## Create neuron
 
-A neuron is simply a single microservice within a product which consists of a set of cloud infrastructure and, in most cases, some form of code implementation. The cloud infrastructure is specified using Terraform and the code implementation may be done in any language.
+A neuron is a _unit of compute_ within a product, i.e. that which executes the logic. This therefore consists of a set of cloud infrastructure and, in most cases, some form of code implementation. The cloud infrastructure is specified using Terraform and the code implementation may be done in any language.
 
 #### 👨‍💻 User actions
 Simply run the `alis neuron create` command from the terminal and follow the prompts.
@@ -95,7 +95,7 @@ The Alis CLI has the command available `alis gen terraform` which is able to gen
 In the majority of cases, there is some form of code implementation which realises the methods defined in protocol buffer, referred to as the implementation of the server. In this step, one effectively builds out the APIs to process the request, execute logic in the code and return a response.
 
 #### 👨‍💻 User actions
-1. Using either the auto-generated template files or your  own custom files, implement the logic of the protocol buffers by using the auto-generated client libraries.
+1. Using either the auto-generated template files or your own custom files, implement the logic of the protocol buffers by using the auto-generated client libraries.
 2. If necessary, customise the `Dockerfile` to ensure that the containerisation of the code will be correct.
 
 #### 🏗 Alis Build
