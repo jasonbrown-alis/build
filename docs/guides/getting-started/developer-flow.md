@@ -72,7 +72,7 @@ This single source of truth also sets the foundation for additional auto-generat
 
 ## Create neuron
 
-A neuron is a _unit of compute_ within a product, i.e. that which executes the logic. This therefore consists of a set of cloud infrastructure and, in most cases, some form of code implementation. The cloud infrastructure is specified using Terraform and the code implementation may be done in any language.
+A neuron is a _unit of compute_ within a product, i.e. the infrastructure and code that executes the logic. This therefore consists of a set of cloud infrastructure and, in most cases, some form of code implementation. The cloud infrastructure is specified using Terraform and the code implementation may be done in any language.
 
 #### 👨‍💻 User actions
 Simply run the `alis neuron create` command from the terminal and follow the prompts.

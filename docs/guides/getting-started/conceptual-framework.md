@@ -36,7 +36,7 @@ A `product` resource represents a digital product built on the platform. The maj
 	- Manages access to the deployments of the `product`. This may be on an individual or group level.
 	- Will specify the various APIs and infrastructure required by the children `neurons` through using [Terraform](https://www.terraform.io/docs).
 
-Example `products` built by [alis](https://alpha.alisx.com/products) include:
+Example `products` built by [Alis Alpha OS](https://alpha.alisx.com/products) include:
 - `DE`: _Data Engineering_, responsible for synchronising data from external sources.
 - `CP`: _Compliance_, a fast and flexible framework for accurate portfolio compliance at scale.
 
@@ -44,15 +44,77 @@ Furthermore, the Alis Build platform delivers its value by leveraging other prod
 such as `OS`, the _operating system_ facilitating the management of all the resources on the platform; and `CL`, the
 _command-line interface_ which provides a means to interact with `OS` from your terminal.
 
-## Protocol Buffer
+## Protocol buffer
 
-::: tip **Coming soon**
-We are actively updating our documentation. This section will be available soon!
+Everything in our worlds starts with a `protocol buffer`, also referred to as a _proto_. This resource leverages the original
+Protocol Buffers design by Sanjay Ghemawat, Jeff Dean, and others (see [Protocol buffers](/guides/references/core-technologies#protocol-buffers) in our _further reading_).
+
+The proto is used to clearly define all the functionality and data structures of the services you want to build out. You therefore
+own your definitions and workflows, whether it is in building out in-house services our integrating with third-party products.
+
+This definition first approach forms the foundation of ensuring the consistency and simplicity across the entire Alis ecosystem.
+It is further leveraged by our platform to offer a range of features, including:
+- Auto-generating internal and client facing client libraries for a range of supported languages (currently Go, Python and JavaScript). This allows for easy implementation of the methods and allows clients to easily consume your services in their own development environment.
+- Autoconfiguring API gateways for the services specified in the protos. This provides HTTP endpoints for the gRPC methods, allowing for traditional REST calls to be made to the endpoints.
+- [Auto-generating documentation](../how-to-guides/auto-generated-docs) for your product directly from your proto definitions.
+
+::: details Everything is a proto
+Everything in our world has a definition in a proto, including the resources discussed in this section!
+
+Below are examples of the Alis Build resource definitions.
+
+```
+// A Organisation resource represents the
+// top-level resource reflecting an organisation
+message Organisation {
+  // The Organisation resource name
+  // Format: organisations/{organisation}
+  string name = 1;
+  // Display name
+  string display_name = 2;
+  ...
+}
+
+// A Product resource represents a product on
+// the Alis Build platform.
+message Product {
+  // Product resource name
+  // Format: organisations/{organisation}/products/{product}
+  string name = 1;
+  // Display name
+  string display_name = 2;
+  ...
+}
+
+// A Protocol Buffer resource.
+//
+// In the beginning there was a Proto. And the Proto was good.
+// Everything in our worlds starts with a Proto. Based on original Protocol Buffers design
+// by Sanjay Ghemawat, Jeff Dean, and others.
+message ProtocolBuffer {
+  // The ProtoPackage resource name
+  // The resourceID refers to the 'package' defined in the .proto file.
+  // Format: protocolBuffers/{resourceID}
+  string name = 1;
+  // State of the ProtocolBuffer.
+  State state = 2;
+  // The ProtocolBuffer State options
+  enum State {
+    // User did not specify state
+    STATE_UNSPECIFIED = 0;
+    // Active state
+    ACTIVE = 1;
+    // Failed
+    FAILED = 2;
+  }
+  ...
+}
+```
 :::
 
 ## Neuron
 
-A `neuron` resource represents the _unit of compute_ used by the parent `product`. Each `neuron` is either a
+A `neuron` resource represents the _unit of compute_, i.e. the infrastructure and code that executes the logic, used by the parent `product`. Each `neuron` is either a
 _resource_ type or a _service_ type. The collection of `neurons` in a `product` - i.e. the resources,
 <a href="https://cloud.google.com/apis/design/standard_methods#:~:text=This%20chapter%20defines%20the%20concept%20of%20standard%20methods%2C%20which%20are%20List%2C%20Get%2C%20Create%2C%20Update%2C%20and%20Delete" target="_blank">
 methods on the resources</a> and the services (typically following <a href="https://cloud.google.com/apis/design/custom_methods" target="_blank">
