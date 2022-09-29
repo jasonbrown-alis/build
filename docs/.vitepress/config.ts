@@ -89,6 +89,10 @@ export default {
 							text: 'Configure your IDE',
 							link: '/guides/how-to-guides/configure-your-IDE'
 						},
+						{
+							text: 'Setting up a gRPC server',
+							link: 'guides/how-to-guides/setting-up-gRPC-server'
+						}
 					]
 				},
 				{
