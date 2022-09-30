@@ -158,7 +158,7 @@
   "resolved" "https://registry.npmjs.org/@types/web-bluetooth/-/web-bluetooth-0.0.15.tgz"
   "version" "0.0.15"
 
-"@vitejs/plugin-vue@^3.0.3":
+"@vitejs/plugin-vue@^3.1.0":
   "integrity" "sha512-fmxtHPjSOEIRg6vHYDaem+97iwCUg/uSIaTzp98lhELt2ISOQuDo2hbkBdXod0g15IhfPMQmAxh4heUks2zvDA=="
   "resolved" "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-3.1.0.tgz"
   "version" "3.1.0"
@@ -258,7 +258,7 @@
   "resolved" "https://registry.npmjs.org/@vue/shared/-/shared-3.2.38.tgz"
   "version" "3.2.38"
 
-"@vueuse/core@^9.1.0":
+"@vueuse/core@^9.1.1":
   "integrity" "sha512-/MZ6qpz6uSyaXrtoeBWQzAKRG3N7CvfVWvQxiM3ei3Xe5ydOjjtVbo7lGl9p8dECV93j7W8s63A8H0kFLpLyxg=="
   "resolved" "https://registry.npmjs.org/@vueuse/core/-/core-9.2.0.tgz"
   "version" "9.2.0"
@@ -388,6 +388,11 @@
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
 
+"nprogress@^0.2.0":
+  "integrity" "sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA=="
+  "resolved" "https://registry.npmjs.org/nprogress/-/nprogress-0.2.0.tgz"
+  "version" "0.2.0"
+
 "path-parse@^1.0.7":
   "integrity" "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw=="
   "resolved" "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz"
@@ -457,7 +462,7 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
-"vite@^3.0.0", "vite@^3.0.8":
+"vite@^3.0.0", "vite@^3.1.0":
   "integrity" "sha512-YBg3dUicDpDWFCGttmvMbVyS9ydjntwEjwXRj2KBFwSB8SxmGcudo1yb8FW5+M/G86aS8x828ujnzUVdsLjs9g=="
   "resolved" "https://registry.npmjs.org/vite/-/vite-3.1.0.tgz"
   "version" "3.1.0"
@@ -469,20 +474,21 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-"vitepress@^1.0.0-alpha.13":
-  "integrity" "sha512-gCbKb+6o0g5wHt2yyqBPk7FcvrB+MfwGtg1JMS5p99GTQR87l3b7symCl8o1ecv7MDXwJ2mPB8ZrYNLnQAJxLQ=="
-  "resolved" "https://registry.npmjs.org/vitepress/-/vitepress-1.0.0-alpha.13.tgz"
-  "version" "1.0.0-alpha.13"
+"vitepress@^1.0.0-alpha.17":
+  "integrity" "sha512-8qsR0PPcvxZFDKSU7b7VenxDoqlEbWuWgogeyRhp1pQ96QIAlWPS9BbGGHWlnEfgdtLVDxEfAmCBRE0YJX/Thg=="
+  "resolved" "https://registry.npmjs.org/vitepress/-/vitepress-1.0.0-alpha.17.tgz"
+  "version" "1.0.0-alpha.17"
   dependencies:
     "@docsearch/css" "^3.2.1"
     "@docsearch/js" "^3.2.1"
-    "@vitejs/plugin-vue" "^3.0.3"
+    "@vitejs/plugin-vue" "^3.1.0"
     "@vue/devtools-api" "^6.2.1"
-    "@vueuse/core" "^9.1.0"
+    "@vueuse/core" "^9.1.1"
     "body-scroll-lock" "^4.0.0-beta.0"
+    "nprogress" "^0.2.0"
     "shiki" "^0.11.1"
-    "vite" "^3.0.8"
-    "vue" "^3.2.37"
+    "vite" "^3.1.0"
+    "vue" "^3.2.38"
 
 "vscode-oniguruma@^1.6.1":
   "integrity" "sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA=="
@@ -499,7 +505,7 @@
   "resolved" "https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz"
   "version" "0.13.11"
 
-"vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.25", "vue@^3.2.37", "vue@^3.2.38", "vue@3.2.38":
+"vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.25", "vue@^3.2.38", "vue@3.2.38":
   "integrity" "sha512-hHrScEFSmDAWL0cwO4B6WO7D3sALZPbfuThDsGBebthrNlDxdJZpGR3WB87VbjpPh96mep1+KzukYEhpHDFa8Q=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.38.tgz"
   "version" "3.2.38"
@@ -509,8 +515,3 @@
     "@vue/runtime-dom" "3.2.38"
     "@vue/server-renderer" "3.2.38"
     "@vue/shared" "3.2.38"
-
-"vue3-tabs-component@^1.1.0":
-  "integrity" "sha512-QDg4uuApnp1NoVSSgZa9LRsDS4urBwMaKV3I5SNsgODUZiDqzOxEfyYJiN/0LeIJAv12d8sIU4e87hID3VXoAQ=="
-  "resolved" "https://registry.npmjs.org/vue3-tabs-component/-/vue3-tabs-component-1.1.0.tgz"
-  "version" "1.1.0"
