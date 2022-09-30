@@ -1,9 +1,10 @@
 ---
-title: Setting up your first gRPC server
+title: Setting up a gRPC server
 ---
 
-# Setting up your first gRPC server
-This tutorial will provide an overview of setting up a gRPC server in your language of choice and will offer instructions ***specific to Alis Build***. You will learn how to: 
+# Setting up a gRPC server
+
+This tutorial will provide an overview of setting up a gRPC server in your language of choice and will offer instructions ***specific to Alis Build***. You will learn how to:
 - create and populate the  `.proto` file
 - release a protobuf package
 - implement the business logic behind your methods
@@ -15,7 +16,7 @@ gRPC documentation](https://grpc.io/docs/languages/).
 
 ::: info Before you begin
 This guide assumes the user has an understanding of the [programming language](https://grpc.io/docs/languages/) they wish to implement the server in, as well
-as an understanding of [gRPC and protocol buffers](https://grpc.io/docs/what-is-grpc/introduction/).
+as an understanding of [protocol buffers](/guides/references/core-technologies.html#grpc) and [gRPC](/guides/references/core-technologies.html#grpc).
 :::
 
 ## Prerequisites
@@ -114,19 +115,19 @@ message ListBooksResponse {
 To create a new proto on Alis Exchange run `alis proto create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}`
 (e.g. `alis proto create xmpl.br.resources-books-v1`).
 
-::: tip
-Throuhgout this example, we will use the "Example Organisation" (with id `xmpl`), the "Books repository"
+:::tip
+Throughout this example, we will use the "Example Organisation" (with id `xmpl`), the "Books repository"
 product (with id `br`) and neuron `resources-books-v1`. The domain for this organisation is "example.services" -
 please be sure to adapt the example commands to your organisation and product.
 :::
 
-This will create a new `.proto` file, which you will then populate with the services, methods and messages you require. 
-This file will be located in the `alis.exchange` directory at `alis.exchange/{orgID}/proto/{orgID}/{productID}/{resources|services}/ {neuronName}/{neuronVersion}`
+This will create a new `.proto` file, which you will then populate with the services, methods and messages you require.
+This file will be located in the `alis.exchange` directory at `alis.exchange/{orgID}/proto/{orgID}/{productID}/{resources|services}/{neuronName}/{neuronVersion}`
 
 
 ## Publishing the initial protobuf package
 Once you are happy with your proto definition, run `alis proto release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}`. This will
-publish the protobuf package in various languages, for use by clients, and will be used for code generation when commencing server implementation. 
+publish the protobuf package in various languages, for use by clients, and will be used for code generation when commencing server implementation.
 
 ::: warning
 The Alis OS generates boilerplate code to kick of your server implementation based off of the contents of your `.proto` files. By putting effort into deciding on a robust API definition up-front,
@@ -142,7 +143,7 @@ Upon creating a neuron, you will be prompted whether you would like boilerplate 
 The boilerplate code that is given to you will look something like this:
 
 ### Server
-The `server` is responsible for registering your implementation of the service interface (as implemented in the `methods`) with the gRPC server and makes this available to serve traffic 
+The `server` is responsible for registering your implementation of the service interface (as implemented in the `methods`) with the gRPC server and makes this available to serve traffic
 on the specified port (the default port for cloud run).
 
 <tabs>
@@ -256,10 +257,10 @@ def serve():
         # ('grpc.max_send_message_length', MAX_MESSAGE_LENGTH),
         ('grpc.max_receive_message_length', MAX_MESSAGE_SIZE)
     ])
-    
-    
+
+
     books_pb_grpc.add_BooksServiceServicer_to_server(methods.BooksService(), server)
-    
+
 
     # open an insecure port for accepting RPCs
     server.add_insecure_port('0.0.0.0:8080')
@@ -353,19 +354,19 @@ class BooksService(books_pb_grpc.BooksService):
     def __init__(self):
             logging.basicConfig(level=logging.INFO)
 
-    
+
     def GetBook(self, request:books_pb.GetBookRequest, context: grpc.ServicerContext, **kwargs) \
             -> return books_pb.Book
           # TODO: implement logic here.
           return books_pb.Book()
 
-    
+
     def ListBooks(self, request:books_pb.ListBooksRequest, context: grpc.ServicerContext, **kwargs) \
             -> return books_pb.ListBooksResponse
           # TODO: implement logic here.
           return books_pb.ListBooksResponse()
 
-    
+
     def CreateBook(self, request:books_pb.CreateBookRequest, context: grpc.ServicerContext, **kwargs) \
             -> return books_pb.Book
           # TODO: implement logic here.
@@ -469,7 +470,7 @@ class BooksServiceTest(unitbooks.TestCase):
             }
             self.books_server = grpc_booksing.server_from_dictionary(descriptors_to_servicers, self._real_time)
 
-    
+
     def books_get_book(self):
           # TODO: add custom logic here
           request = books_pb.GetBookRequest()
@@ -481,7 +482,7 @@ class BooksServiceTest(unitbooks.TestCase):
           response, metadata, code, details = rpc.termination()
           self.assertIs(code, StatusCode.OK)
 
-    
+
     def books_list_books(self):
           # TODO: add custom logic here
           request = books_pb.ListBooksRequest()
@@ -493,7 +494,7 @@ class BooksServiceTest(unitbooks.TestCase):
           response, metadata, code, details = rpc.termination()
           self.assertIs(code, StatusCode.OK)
 
-    
+
     def books_create_book(self):
           # TODO: add custom logic here
           request = books_pb.CreateBookRequest()
@@ -511,7 +512,7 @@ class BooksServiceTest(unitbooks.TestCase):
 </tabs>
 
 ### Dockerfile
-The `Dockerfile` is where we containerize our application/server to be deployed to the cloud. At Alis, we make use of cloud run, which is why it is the terraform 
+The `Dockerfile` is where we containerize our application/server to be deployed to the cloud. At Alis, we make use of cloud run, which is why it is the terraform
 spec that comes as boilerplate code for deploying our Docker images to the cloud.
 
 <tabs>
@@ -791,7 +792,7 @@ The `methods` is where your custom logic lives. Once you have populated the meth
 
 On Alis Build, run `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` to create a new neuron version. We can then deploy
 this version by running `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` and selecting the product deployment of choice
-or creating a new deployment if one does not exist. 
+or creating a new deployment if one does not exist.
 
 ::: tip
 Note that some of the clients you would like to create (like a Firestore client) require a google project id with
