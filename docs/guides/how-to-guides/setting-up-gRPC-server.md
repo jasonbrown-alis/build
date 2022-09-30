@@ -22,12 +22,13 @@ as an understanding of [gRPC and protocol buffers](https://grpc.io/docs/what-is-
 To get started with this tutorial, there are a couple things you need to have done as an Alis Builder:
 
 1. Ensure you have installed and set up the [Alis CLI](../getting-started/command-line-interface.md)
-2. Ensure you have [created a product on Alis Build](../getting-started/conceptual-framework.md)
+2. Ensure you have [created a product on Alis Exchange](../getting-started/conceptual-framework.md)
 
 
 ## The Proto Definition: defining our example service
 For this example, we will use the simple "Books" service as specified in the [consumer experience docs](../getting-started/consumer-experience.md)
-and used extensively throughout Google's [API Improvement Proposals](https://google.aip.dev/).
+and used extensively throughout Google's [API Improvement Proposals(AIPs)](https://google.aip.dev/). The definitions here differ
+slightly from the AIPs for simplicity's sake.
 
 The `.proto` file for the Books service consists of a service and methods, and the various messages as specified below:
 ```
@@ -36,7 +37,7 @@ service BooksService {
   // Get a specific book.
   rpc GetBook(GetBookRequest) returns (Book) {
     option (google.api.http) = {
-      get: "/resources/store/v1/{name=books/*}"
+      get: "/resources/books/v1/{name=books/*}"
     };
     option (google.api.method_signature) = "name";
   }
@@ -85,28 +86,18 @@ message GetBookRequest {
 
 // Request message for the ListBooks method
 message ListBooksRequest {
-  // The parent, which owns this collection of books.
-  // Format:
-  //  - publishers/{publisher}
-  //  - authors/{author}
-  string parent = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      child_type: "library.googleapis.com/Book"
-    }];
-
   // The maximum number of books to return. The service may return fewer than
   // this value.
   // If unspecified, at most 50 books will be returned.
   // The maximum value is 1000; values above 1000 will be coerced to 1000.
-  int32 page_size = 2;
+  int32 page_size = 1;
 
   // A page token, received from a previous `ListBooks` call.
   // Provide this to retrieve the subsequent page.
   //
   // When paginating, all other parameters provided to `ListBooks` must match
   // the call that provided the page token.
-  string page_token = 3;
+  string page_token = 2;
 }
 // Response message for the ListBooks method
 message ListBooksResponse {
@@ -120,12 +111,13 @@ message ListBooksResponse {
 ```
 
 ### On Alis Build
-To create a new proto on Alis Build run `alis proto create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}`
+To create a new proto on Alis Exchange run `alis proto create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}`
 (e.g. `alis proto create xmpl.br.resources-books-v1`).
 
 ::: tip
 Throuhgout this example, we will use the "Example Organisation" (with id `xmpl`), the "Books repository"
-product (with id `br`) and neuron `resources-books-v1`.
+product (with id `br`) and neuron `resources-books-v1`. The domain for this organisation is "example.services" -
+please be sure to adapt the example commands to your organisation and product.
 :::
 
 This will create a new `.proto` file, which you will then populate with the services, methods and messages you require. 
@@ -137,13 +129,13 @@ Once you are happy with your proto definition, run `alis proto release {orgID}.{
 publish the protobuf package in various languages, for use by clients, and will be used for code generation when commencing server implementation. 
 
 ::: warning
-The Alis OS generates boilerplate code based off of the contents of your `.proto` file. By putting effort into deciding on a robust API definition up-front,
+The Alis OS generates boilerplate code to kick of your server implementation based off of the contents of your `.proto` files. By putting effort into deciding on a robust API definition up-front,
 it helps the Alis Build platform to relieve you of redundant tasks.
 :::
 
 
 ## Implementing the server
-Once you have released your protos, implementation of the server can begin. This is done by creating a [neuron](../getting-started/conceptual-framework.md) on Alis Build. To create a new neuron,
+Once you have released your protos, implementation of the server can begin. This is done by creating a new [neuron](../getting-started/conceptual-framework.md) on Alis Exchange. To create a new neuron,
 run `alis neuron create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` (e.g. `alis neuron create xmpl.br.resources-books-v1`).
 Upon creating a neuron, you will be prompted whether you would like boilerplate code. Type `y` and select the language which you would like to implement the server in.
 
@@ -189,7 +181,7 @@ func init() {
 	}
 
 	// TODO: add/remove required clients.
-	// Initialise Bigquery client
+	// Initialise Firestore client
 	firestoreProject, err = firestore.NewClient(context.Background(), projectID)
 	if err != nil {
 		log.Fatalf("firestore.NewClient: %v", err)
@@ -351,7 +343,9 @@ import logging
 # protobuf imports
 
 from xmpl.br.resources.books.v1 import books_pb2_grpc as books_pb_grpc
+import google.cloud.firestore as firestore
 
+firestore_client = firestore.Client(project=os.getenv('ALIS_OS_PROJECT'))
 
 
 class BooksService(books_pb_grpc.BooksService):
@@ -743,8 +737,10 @@ func (s *myService) ListBooks(ctx context.Context, req *pb.ListBooksRequest) (*p
 	}
 
 	// the User message to return
-	booksResponse := &pb.ListBooksResponse{}
-	for i := 0; i < len(objects); i++ {
+	booksResponse := &pb.ListBooksResponse{
+		Books: nil,
+	}
+	for i := 0; i < len(objects) || i < req.GetPageSize(); i++ {
 		book := &pb.Book{}
 		err = objects[i].DataTo(book)
 		booksResponse.Books = append(booksResponse.GetBooks(), book)
@@ -791,7 +787,7 @@ Coming soon
 </tabs>
 
 ## Deploying your server
-The `methods` is where your custom logic lives. Once you have populated the methods and response messages, we can release and deploy our neuron to server traffic.
+The `methods` is where your custom logic lives. Once you have populated the methods and response messages, we can release and deploy our neuron to serve traffic.
 
 On Alis Build, run `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` to create a new neuron version. We can then deploy
 this version by running `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` and selecting the product deployment of choice
