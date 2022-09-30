@@ -692,7 +692,103 @@ pip3 install --index-url https://europe-west1-python.pkg.dev/uni-org-zkw/protobu
 </tab>
 </tabs>
 
+## Implementing the methods
+Below is an example implementation which integrates with FireStore
 
+<tabs>
+<tab name="Go">
+
+```go
+package main
+
+import (
+	"context"
+	pb "go.protobuf.alis.university/uni/bb/services/test/v1"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+)
+
+// Create a Service object which we'll register with the Server
+type myService struct {
+	pb.UnimplementedBooksServiceServer
+}
+
+func (s *myService) GetBook(ctx context.Context, req *pb.GetBookRequest) (*pb.Book, error) {
+	// validate arguments
+	if req.GetName() == "" { // requires a name
+		return nil, status.Errorf(codes.InvalidArgument, "name is a required field but was not provided")
+	}
+
+	// retrieve the object from firestore
+	object, err := firestoreClient.Doc(req.GetName()).Get(ctx)
+	if err != nil {
+		return nil, status.Errorf(codes.NotFound, "book (%s) not found", req.GetName())
+	}
+
+	// the Book message to return
+	book := &pb.Book{}
+	err = object.DataTo(book)
+	if err != nil { // handle the error
+		return nil, status.Errorf(codes.AlreadyExists, "err writing firestore data to book: %s", err)
+	}
+
+	return book, nil
+}
+
+func (s *myService) ListBooks(ctx context.Context, req *pb.ListBooksRequest) (*pb.ListBooksResponse, error) {
+	// obtain the books collection object
+	objects, err := firestoreClient.Collection("users").Documents(ctx).GetAll()
+	if err != nil {
+		return nil, err
+	}
+
+	// the User message to return
+	booksResponse := &pb.ListBooksResponse{}
+	for i := 0; i < len(objects); i++ {
+		book := &pb.Book{}
+		err = objects[i].DataTo(book)
+		booksResponse.Books = append(booksResponse.GetBooks(), book)
+	}
+
+	// TODO: this does not implement pagination
+
+	return booksResponse, nil
+}
+
+func (s *myService) CreateBook(ctx context.Context, req *pb.CreateBookRequest) (*pb.Book, error) {
+	// validate arguments
+	if req.GetBookId() == "" { // requires a userId
+		return nil, status.Errorf(codes.InvalidArgument, "book_id is a required field but was not provided")
+	}
+	if req.GetBook() == nil { // requires a user object
+		return nil, status.Errorf(codes.InvalidArgument, "book is a required field but was not provided")
+	}
+
+	// set the resource name of the user
+	req.GetBook().Name = "books/" + req.GetBookId()
+
+	_, err := firestoreClient.Doc(req.GetBook().GetName()).Create(ctx, req.GetBook())
+	if err != nil {
+		if status.Code(err) == codes.AlreadyExists {
+			return nil, status.Errorf(codes.AlreadyExists, "the book (%s) already exists", req.GetBookId())
+		}
+		return nil, status.Errorf(codes.AlreadyExists, "failed to create book")
+	}
+
+	return req.GetBook(), nil
+}
+
+```
+
+</tab>
+<tab name="Python">
+
+::: info
+Coming soon
+:::
+
+</tab>
+</tabs>
 
 ## Deploying your server
 The `methods` is where your custom logic lives. Once you have populated the methods and response messages, we can release and deploy our neuron to server traffic.
