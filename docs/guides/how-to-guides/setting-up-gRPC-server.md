@@ -123,6 +123,11 @@ message ListBooksResponse {
 To create a new proto on Alis Build run `alis proto create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}`
 (e.g. `alis proto create xmpl.br.resources-books-v1`).
 
+::: tip
+Throuhgout this example, we will use the "Example Organisation" (with id `xmpl`), the "Books repository"
+product (with id `br`) and neuron `resources-books-v1`.
+:::
+
 This will create a new `.proto` file, which you will then populate with the services, methods and messages you require. 
 This file will be located in the `alis.exchange` directory at `alis.exchange/{orgID}/proto/{orgID}/{productID}/{resources|services}/ {neuronName}/{neuronVersion}`
 
@@ -185,9 +190,9 @@ func init() {
 
 	// TODO: add/remove required clients.
 	// Initialise Bigquery client
-	firestoreProject, err = bigquery.NewClient(context.Background(), projectID)
+	firestoreProject, err = firestore.NewClient(context.Background(), projectID)
 	if err != nil {
-		log.Fatalf("bigquery.NewClient: %v", err)
+		log.Fatalf("firestore.NewClient: %v", err)
 	}
 
 }
@@ -598,7 +603,7 @@ CMD ["python", "server.py"]
 </tabs>
 
 ### Terraform
-Upon neuron creation, some boilerplate terraform is added the proto repo at the neuron level. This includes:
+Upon neuron creation, some boilerplate terraform is added to the proto repo at the neuron level. This includes:
 1. `cloudrun.tf`
 2. `variables.tf`
 3. `main.tf`
@@ -634,7 +639,7 @@ python -m pip install grpcio-tools
 To generate the client and server stubs for local testing and development run `alis gen protobuf --{language} {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` - this will generate the stubs
 and store them at `alis.exchange/{orgID}/protobuf/{language}/{orgID}/{productID}/{resources|services}/ {neuronName}/{neuronVersion}`
 
-Under the hood, the runs a `protoc` command and facilitates the routes to the destination of your source protos and the destination
+Under the hood, the Alis CLI runs a `protoc` command and facilitates the routes to the destination of your source protos and the destination
 to which the stubs should be output.
 
 ::: tip
@@ -690,3 +695,17 @@ pip3 install --index-url https://europe-west1-python.pkg.dev/uni-org-zkw/protobu
 
 
 ## Deploying your server
+The `methods` is where your custom logic lives. Once you have populated the methods and response messages, we can release and deploy our neuron to server traffic.
+
+On Alis Build, run `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` to create a new neuron version. We can then deploy
+this version by running `alis neuron release {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` and selecting the product deployment of choice
+or creating a new deployment if one does not exist. 
+
+::: tip
+Note that some of the clients you would like to create (like a Firestore client) require a google project id with
+the Firestore API enabled. In this case, you will only be able to test your methods after first creating a neuron deployment
+as the neuron deployment will set up the google project under which the Firestore will exist.
+:::
+
+Your server will now be available to serve traffic on cloud run. Navigate to the product deployment Google project
+on [cloud console](https://console.cloud.google.com) to view the cloud run service.
