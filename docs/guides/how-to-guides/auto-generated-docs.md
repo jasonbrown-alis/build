@@ -59,11 +59,17 @@ docs
 └── index.md
 ```
 
-The `index.md` file at the root directory, serves as the landing page for the documentation site and can be customised using the (VitePress Home Page theme)[https://vitepress.vuejs.org/guide/theme-home-page#home-page]. The other `index.md` files is the respective page that will be opened when the `guides`, `reference` and `samples` navigation tab is opened on the site.
+The `index.md` file at the root directory, serves as the landing page for the documentation site and can be customised using the [VitePress Home Page theme](https://vitepress.vuejs.org/guide/theme-home-page#home-page).
+Alternatively, a redirect to another existing page can be specified by using the [redirect functionality](#redirect-to-a-different-page).
+
+The other `index.md` files is the respective page that will be opened when the `guides`, `reference` and `samples` navigation tab is opened on the site.
+
+:::warning
+The `index.md` is REQUIRED for all three of the `guides`, `reference` and `samples` directories.
+:::
 
 Any subdirectory added under `guides` and `samples` will be converted into a heading in the documentation navigation sidebar, it's depth being determined by the file structure. Markdown files can then be placed inside either the root or any of the subdirectories of `guides` and `samples` and will be added to the documentation sidebar. An example file structure and the resulting documentation navigation sidebar for the `guides` section is depicted below.
-
-
+By default, the navigation bar structures directories in alphabetical order, see the [customization section](#custom-ordering-in-navigation-bar) below on how to specify a custom order.
 ```
 ├── guides
 │   ├── how-to-guides
@@ -107,6 +113,99 @@ Content to be generated on the documentation page should follow the Frontmatter.
 Since our documentation uses [VitePress](https://vitepress.vuejs.org/) under the hood, you can leverage the functionality of VitePress [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown) and to get the most out of your documentation.
 :::
 
+## Customizing documentation
+
+In addition to the [standard _Markdown Extensions_](https://vitepress.vuejs.org/guide/markdown#markdown-extensions),
+markdown files may incorporate the customization features demonstrated in this section to improve documentation flow and readability.
+
+### Tabs for multiple language code blocks
+
+A custom `tabs` tag may be used to introduce a section in which a set of tabs can be used, each `tab` containing its own content.
+This is typically used when providing code blocks for multiple languages, such as in the example below.
+
+<tabs>
+<tab name="Go">
+
+```go
+fmt.Println("Hello World")
+```
+</tab>
+<tab name="Python">
+
+```python
+print("Hello World")
+```
+</tab>
+<tab name="JS">
+
+```javascript
+console.log("Hello World")
+```
+</tab>
+</tabs>
+
+To use this feature, a parent `<tabs>...</tabs>` tag is required, containing individual `<tab name="{TAB_NAME}">...</tab>` tags.
+The script used to build the former example is shown in the code block below.
+
+:::warning
+The `tabs` functionality requires that all the tags (`tabs` and `tab`) as well as the content of each `tab` does **not** have
+any indentations.
+:::
+
+```html
+    <tabs>
+    <tab name="Go">
+
+    ```go
+    fmt.Println("Hello World")
+    ```
+    </tab>
+    <tab name="Python">
+
+    ```python
+    print("Hello World")
+    ```
+    </tab>
+    <tab name="JS">
+
+    ```javascript
+    console.log("Hello World")
+    ```
+    </tab>
+    </tabs>
+```
+
+### Custom ordering in navigation bar
+
+The navigation bar structures the hierarchy in alphabetical order based on the directory names. To customise the order,
+a _prefix_ may be used.
+
+A prefix is seen as any leading alpha-numeric characters (a-z 0-9) ending with an underscore (_). This allows for a
+specific ordering without the prefix appearing as part of the name in the navigation bar. Examples can be seen below:
+
+| Directory name                  | Prefix           | Navigation bar title |
+|:--------------------------------|:-----------------|:---------------------|
+| 01_getting-started              | _01\__           | Getting started      |
+| 10additional_reference-patterns | _10additional\__ | Reference patterns   |
+| 99z_additional-resources        | _99z\__          | Additional resources |
+
+### Redirect to a different page
+
+A number of cases may exist where an automatic redirect is required. This may include redirecting directly to:
+- A getting started page rather than the home landing page; or
+- A specific page in a section (ie. `guides`, `samples` and `reference`).
+
+This can be accomplished by adding the following code in the body of the `index.md` page.
+
+```vue
+<script setup>
+import {useRouter} from "vitepress";
+
+const Router = useRouter();
+Router.go('/guides/{YourPath}') // Example:  Router.go('/guides/getting-started/introduction')
+</script>
+
+```
 
 ## Deploying documentation
 
