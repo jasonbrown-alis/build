@@ -17,7 +17,7 @@ export default {
             text: 'Edit this page on GitHub'
         },
 		markdown:{
-			theme: "material-lighter"
+			theme: "one-dark-pro"
 		},
 		// nav: [
 		// 	{
