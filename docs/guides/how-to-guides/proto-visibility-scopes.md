@@ -33,7 +33,7 @@ In the following section, a tutorial is provided on how to implement these restr
 ## Implementing visibility restrictions
 
 Firstly, import the `visibility.proto` package in the proto you are working in:
-```
+```protobuf
 import "google/api/visibility.proto";
 ```
 
@@ -43,7 +43,7 @@ Assign the relevant visibility restriction option tags to the parts of the proto
 
 The entire `BooksService` is set to `“INTERNAL”`, therefore all methods (_Get_ and _Create_) part of the `BooksService` will also be internal.
 
-```
+```protobuf
 service BooksService {
 	option (google.api.api_visibility) = {
 		restriction: "INTERNAL",
@@ -70,7 +70,7 @@ service BooksService {
 
 The `CreateBook` method will be set to have an `“INTERNAL”` restriction but the `GetBook` method will be publicly visible.
 
-```
+```protobuf
 service BooksService {
 	// Create a book.
 	rpc CreateBook(CreateBookRequest) returns (Book) {
@@ -101,7 +101,7 @@ The `CreateBookRequest` message has an `“INTERNAL”` restriction and therefor
 It is important to note that this DOES NOT set the `Book` resource to `“INTERNAL”` , but simply the field in this message.
 :::
 
-```
+```protobuf
 message CreateBookRequest {
 	option (google.api.message_visibility) = {
 		restriction: "INTERNAL",
@@ -124,7 +124,7 @@ message Book {
 
 The `Book` resource is publicly visible but the `name` field of the Book will be restricted to `“INTERNAL”` visibility.
 
-```
+```protobuf
 message Book {
 	//Name of the book in the format: books/{book}.
 	string name = 1 [(google.api.field_visibility) = {
@@ -141,7 +141,7 @@ message Book {
 
 The entire `BookCategory` enum is restricted to `“INTERNAL”` visibility, therefore all of its values will also be restricted to `“INTERNAL”` visibility.
 
-```
+```protobuf
 enum BookCategory {
 	option (google.api.enum_visibility) = {
 		restriction: "INTERNAL",
@@ -159,7 +159,7 @@ enum BookCategory {
 
 The `BookCategory` enum is publicly visible but the `UNKNOWN` value is restricted to `“INTERNAL”` visibility.
 
-```
+```protobuf
 enum BookCategory {
 	// Unknown
 	UNKNOWN = 0 [(google.api.value_visibility) = {

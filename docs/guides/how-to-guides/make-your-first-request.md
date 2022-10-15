@@ -34,7 +34,7 @@ on a specific book.
 
 The full `Books.proto` file is shown for reference purposes.
 
-```
+```protobuf
 syntax = "proto3";
 
 package play.me.resources.books.v1;

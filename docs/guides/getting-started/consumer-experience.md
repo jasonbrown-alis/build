@@ -36,7 +36,7 @@ Find out more about Protobufs, their usage and benefits on the platform in the [
 
 Let us consider a `Book` resource with _name_, _display name_, _authors_ and _publishers_ as fields. This is defined in a `books.proto` file as follows:
 
-```
+```protobuf
 // The definition of a book resource.
 message Book {
 
@@ -57,7 +57,7 @@ message Book {
 
 The builders of this product allows you to list all the books available, `ListBooks`, and to retrieve the details of a specific book, `GetBook`. These are also defined in the `books.proto` file as part of the `BooksService`:
 
-```
+```protobuf
 // Book service for foo.br.
 service BooksService {
 	// List all available books.
