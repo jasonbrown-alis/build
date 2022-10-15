@@ -2,6 +2,37 @@ const ROOT_GUIDES = 'guides';
 const ROOT_SAMPLES = 'samples';
 const ROOT_REFERENCE = 'references';
 
+import { defineConfig } from 'vitepress';
+import escapeHtml from 'escape-html';
+import prism from 'prismjs';
+import loadLanguages from 'prismjs/components/index.js';
+
+loadLanguages();
+
+const wrap = (code: string, lang: string) => {
+	if (lang === 'text') code = escapeHtml(code);
+	return `<pre v-pre><code>${code}</code></pre>`;
+};
+
+const highlight = (str: string, lang: string) => {
+	if (!lang) return wrap(str, 'text');
+	lang = lang.toLowerCase();
+	const rawLang = lang;
+	if (lang === 'vue' || lang === 'html') lang = 'markup';
+	if (lang === 'md') lang = 'markdown';
+	if (lang === 'ts') lang = 'typescript';
+	if (lang === 'py') lang = 'python';
+	if (!prism.languages[lang])
+		try {
+			loadLanguages([lang]);
+		} catch {}
+	if (prism.languages[lang]) {
+		const code = prism.highlight(str, prism.languages[lang], lang);
+		return wrap(code, rawLang);
+	}
+	return wrap(str, 'text');
+};
+
 export default {
 	title: 'Alis Build',
 	description: 'Documentation for Alis Build',
@@ -9,6 +40,9 @@ export default {
 		['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/favicon-32x32.png"}],
 		['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/assets/favicon-16x16.png"}],
 	],
+	markdown:{
+		highlight,
+	},
 	themeConfig: {
 		siteTitle: 'Docs',
 		logo: '/assets/site-icon.png',
@@ -16,9 +50,6 @@ export default {
             pattern: 'https://github.com/alis-exchange/build/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
         },
-		markdown:{
-			theme: "one-dark-pro"
-		},
 		// nav: [
 		// 	{
 		// 		text: toTitleCase(ROOT_GUIDES),
@@ -118,7 +149,7 @@ export default {
 			// 	},
 			// ]
 	}
-}
+};
 
 function toTitleCase(s) {
 	return s.replace (/^[-_]*(.)/, (_, c) => c.toUpperCase())       // Initial char (after -/_)

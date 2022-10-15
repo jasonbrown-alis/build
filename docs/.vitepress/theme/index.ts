@@ -4,6 +4,7 @@ import Tab from '../components/Tab.vue'
 import './custom.css'
 import './tabs.css'
 import '../shims.d.ts'
+import 'prismjs/themes/prism-tomorrow.css';
 
 export default {
 	...DefaultTheme,
