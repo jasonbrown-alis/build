@@ -92,13 +92,13 @@ You have successfully installed the **alis.exchange** CLI!
 1. Open command prompt as administrator.
 2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
 
-```
+```bash
 md %HOMEPATH%\alis.exchange\cli
 ```
 
 3. Add this folder to your `$PATH`:
 
-```
+```bash
 setx PATH "%PATH%;%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 ```
 

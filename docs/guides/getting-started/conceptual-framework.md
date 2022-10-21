@@ -63,7 +63,7 @@ Everything in our world has a definition in a proto, including the resources dis
 
 Below are examples of the Alis Build resource definitions.
 
-```
+```protobuf
 // A Organisation resource represents the
 // top-level resource reflecting an organisation
 message Organisation {

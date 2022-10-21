@@ -18,10 +18,10 @@ A few things to consider when choosing your IDE. VS Code and GoLand provides sup
 2. In the IDE, under the extensions tab, search for and install the latest versions of the following plugins:
 
 <div>
-    <img src='./img/VSCodeAIPLinter.png' style='max-width: 180px'>
+<img src='./img/configure-your-IDE-vs-code-aip-linter.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='./img/VSgoPlugin.png' style='max-width: 180px'>
+<img src='./img/configure-your-IDE-vs-go-plugin.png' style='max-width: 180px'>
 </div>
 
 
@@ -38,19 +38,19 @@ The aip linter plugin requires that there is either a `.api-linter.json` or `.ap
 2. In the IDE, open the _Preferences_ and navigate to _Plugins_. In the marketplace, search for and install the latest versions of the following plugins:
 
 <div>
-    <img src='./img/envFile.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-env-file.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='./img/envFileSupport.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-env-file-support.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='./img/gitToolBox.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-git-tool-box.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='./img/Terraform.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-terraform.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='./img/aipLinter.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-aip-linter.png' style='max-width: 180px'>
 </div>
 
 ### Plugin Configuration
@@ -72,7 +72,7 @@ Unselect the option to `Configure automatically` and add the path to the Google 
 to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
-![](img/aipLinterPreferences.png)
+![](img/configure-your-IDE-aip-linter-preferences.png)
 
 
 ### Protocol Buffers Plugin
@@ -87,7 +87,7 @@ Select the *Configure Automatically* checkbox and *Apply*.
 While leaving the *JetBrains Protoeditor* directory path, add the path to the Google proto directory, _/Users/{YourUsername}/alis.exchange/google/proto_, to the `Import Paths`.
 
 Your final configuration should look similar to the image below.
-![](img/protocolBufferPreferences.png)
+![](img/configure-your-IDE-protocol-buffer-preferences.png)
 
 ## What's next?
 
