@@ -234,3 +234,15 @@ $ alis docs release play.dm
 ```
 
 4. The documentation will be available at: `https://docs.{productID}.{orgDomain}` (e.g. https://docs.de.alis.services)
+
+## View rendered Markdown
+
+Want to see what a specific Markdown document will look like before releasing it?
+
+You can access the [online environment](https://stackblitz.com/edit/documentation-tester?file=docs/index.md),
+which contains all the configurations of our documentation setup. This means that you can simply replace the content of
+the `index.md` file with your Markdown content and see how it will be rendered in your documentation.
+
+<div>
+    <img src='./img/auto-generated-docs-markdown-viewer.gif' style='max-height: 600px'>
+</div>
