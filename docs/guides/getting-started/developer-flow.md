@@ -14,7 +14,7 @@ A product on the platform is what is offered to the world and consists of one or
 In this overview, it is the building of these underlying services which we are interested in. The high-level process that is followed
 when creating services is depicted below.
 
-![](img/overview-build-process.svg)
+![](img/developer-flow-overview-build-process.svg)
 
 Each of the steps is explained in the following sections and follow the structure:<br>
 - Overview of the step; <br>

@@ -7,9 +7,9 @@ We aim to ensure that the way software across the Alis Build platform operates, 
 
 What does that experience feel like? In this section, we want to provide you with a few basic concepts and then allow you to experience the Alis Build platform for yourself. Below is a teaser of what you can expect 😉.
 
-![](img/quick-start-autocomplete1.gif)
+![](img/consumer-experience-autocomplete-1.gif)
 
-![](img/quick-start-autocomplete2.gif)
+![](img/consumer-experience-autocomplete-2.gif)
 
 
 ## Definition-first approach
