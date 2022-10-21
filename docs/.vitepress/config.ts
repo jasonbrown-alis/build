@@ -103,28 +103,52 @@ export default {
 				{
 					text: 'How-to-guides',
                     collapsible: true,
+                    collapsed: true,
 					items: [
 						{
 							text: 'Make a request to a product',
 							link: '/guides/how-to-guides/make-your-first-request'
 						},
 						{
-							text: 'Leveraging auto-generated documentation',
+							text: 'Leverage auto-generated documentation',
 							link: '/guides/how-to-guides/auto-generated-docs'
 						},
 						{
-							text: 'Specifying proto visibility scopes',
+							text: 'Specify proto visibility scopes',
 							link: '/guides/how-to-guides/proto-visibility-scopes'
 						},
 						{
 							text: 'Configure your IDE',
 							link: '/guides/how-to-guides/configure-your-IDE'
 						},
+						{
+							text: 'Build a service',
+							collapsible: true,
+							items: [
+								{
+									text: 'Overview',
+									link: '/guides/how-to-guides/build-a-service/overview',
+								},
+								{
+									text: 'Design',
+									link: '/guides/how-to-guides/build-a-service/design',
+								},
+								{
+									text: 'Implement',
+									link: '/guides/how-to-guides/build-a-service/implement',
+								},
+								{
+									text: 'Deploy',
+									link: '/guides/how-to-guides/build-a-service/deploy',
+								},
+							]
+						}
 					]
 				},
 				{
 					text: 'Further Reading',
 					collapsible: true,
+					collapsed: true,
 					items: [
 						{
 							text: 'Resource-oriented design',

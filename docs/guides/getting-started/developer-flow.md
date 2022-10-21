@@ -34,7 +34,7 @@ Simply run the `alis proto create` command from the terminal.
 #### 🏗 Alis Build
 In the background, the platform creates a protocol buffer resource within the product and provides a boilerplate proto file which is to be defined in the following step.
 
-## Define methods and message
+## Define methods and messages
 
 Defining the methods and messages in the proto is one of the most important aspects of the build process as it serves as the source of truth for the functionality of the products. The [Resource-oriented design](../references/resource-oriented-design.md) pattern is widely adopted and provides detailed guidelines on how to approach the definitions and best practices for writing APIs.
 
