@@ -18,10 +18,10 @@ A few things to consider when choosing your IDE. VS Code and GoLand provides sup
 2. In the IDE, under the extensions tab, search for and install the latest versions of the following plugins:
 
 <div>
-    <img src='img/configure-your-IDE-vs-code-aip-linter.png' style='max-width: 180px'>
+<img src='./img/configure-your-IDE-vs-code-aip-linter.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='img/configure-your-IDE-vs-go-plugin.png' style='max-width: 180px'>
+<img src='./img/configure-your-IDE-vs-go-plugin.png' style='max-width: 180px'>
 </div>
 
 
@@ -38,19 +38,19 @@ The aip linter plugin requires that there is either a `.api-linter.json` or `.ap
 2. In the IDE, open the _Preferences_ and navigate to _Plugins_. In the marketplace, search for and install the latest versions of the following plugins:
 
 <div>
-    <img src='img/configure-your-IDE-env-file.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-env-file.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='img/configure-your-IDE-env-file-support.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-env-file-support.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='img/configure-your-IDE-git-tool-box.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-git-tool-box.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='img/configure-your-IDE-terraform.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-terraform.png' style='max-width: 180px'>
 </div>
 <div>
-    <img src='img/configure-your-IDE-aip-linter.png' style='max-width: 180px'>
+    <img src='./img/configure-your-IDE-aip-linter.png' style='max-width: 180px'>
 </div>
 
 ### Plugin Configuration
