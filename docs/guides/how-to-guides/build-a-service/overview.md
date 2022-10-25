@@ -21,7 +21,7 @@ please be sure to adapt the example commands to your organisation and product.
 
 ## Prerequisites
 
-This tutorial assumes a conceptual understanding of both [protocol buffers](/guides/references/core-technologies.html#grpc) and [gRPC](/guides/references/core-technologies.html#grpc).
+This tutorial assumes a conceptual understanding of both [protocol buffers](../../references/core-technologies#Protocol buffers) and [gRPC](../../references/core-technologies#grpc).
 
 Furthermore, to follow in your own development environment, ensure that you have:
 1. Installed and set up the [Alis CLI](../../getting-started/command-line-interface);
