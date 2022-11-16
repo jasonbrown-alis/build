@@ -121,28 +121,28 @@ export default {
 							text: 'Configure your IDE',
 							link: '/guides/how-to-guides/configure-your-IDE'
 						},
-						{
-							text: 'Build a service',
-							collapsible: true,
-							items: [
-								{
-									text: 'Overview',
-									link: '/guides/how-to-guides/build-a-service/overview',
-								},
-								{
-									text: 'Design',
-									link: '/guides/how-to-guides/build-a-service/design',
-								},
-								{
-									text: 'Implement',
-									link: '/guides/how-to-guides/build-a-service/implement',
-								},
-								{
-									text: 'Deploy',
-									link: '/guides/how-to-guides/build-a-service/deploy',
-								},
-							]
-						}
+						// {
+						// 	text: 'Build a service',
+						// 	collapsible: true,
+						// 	items: [
+						// 		{
+						// 			text: 'Overview',
+						// 			link: '/guides/how-to-guides/build-a-service/overview',
+						// 		},
+						// 		{
+						// 			text: 'Design',
+						// 			link: '/guides/how-to-guides/build-a-service/design',
+						// 		},
+						// 		{
+						// 			text: 'Implement',
+						// 			link: '/guides/how-to-guides/build-a-service/implement',
+						// 		},
+						// 		{
+						// 			text: 'Deploy',
+						// 			link: '/guides/how-to-guides/build-a-service/deploy',
+						// 		},
+						// 	]
+						// }
 					]
 				},
 				{
