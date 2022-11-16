@@ -46,7 +46,7 @@ cd helloworld
 
 ## 1. Design
 
-In the _design_ step, we use [Protocol Buffers](/docs/guides/references/resource-oriented-design.md#protocol-buffers) to
+In the _design_ step, we use [Protocol Buffers](../references/resource-oriented-design.md#protocol-buffers) to
 define all resources and services that we use.
 
 From your terminal, run the command:

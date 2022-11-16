@@ -4,7 +4,7 @@ title: Design
 
 # Design the Books Service
 
-The simple `BooksService` used as an example is the same as that specified in the [consumer experience docs](../getting-started/consumer-experience.md)
+The simple `BooksService` used as an example is the same as that specified in the [consumer experience docs](../../getting-started/consumer-experience.md)
 and used extensively throughout Google's [API Improvement Proposals(AIPs)](https://google.aip.dev/).
 
 ## Create protocol buffer

@@ -8,7 +8,7 @@ Upon creating a neuron, you will be prompted whether you would like boilerplate 
 populate your neuron's directory with the necessary boilerplate code: Terraform for infrastructure and the language of choice for code implementation.
 
 ## Specify infrastructure
-The neuron comes with the most basic infrastructure necessary to host your server on [cloud run](https://cloud.google.com/run). This includes:
+The neuron comes with the most basic infrastructure necessary to host your server on [Cloud Run](https://cloud.google.com/run). This includes:
 
 1. `cloudrun.tf` - specifies the cloudrun service infrastructure
 2. `main.tf` - for setting up the required terraform providers
@@ -17,7 +17,7 @@ The neuron comes with the most basic infrastructure necessary to host your serve
 If you wish to make use of different cloud architecture to host your neuron, you can remove, add and change the Terraform spec as required.
 
 ## Implement code
-Once you have released your protos, implementation of the server can begin. This is done by creating a new [neuron](../getting-started/conceptual-framework.md) on Alis Exchange. To create a new neuron,
+Once you have released your protos, implementation of the server can begin. This is done by creating a new [neuron](../../getting-started/conceptual-framework.md) on Alis Exchange. To create a new neuron,
 run `alis neuron create {orgID}.{productID}.{resources|services}-{neuronName}-{neuronVersion}` (e.g. `alis neuron create xmpl.br.resources-books-v1`).
 Upon creating a neuron, you will be prompted whether you would like boilerplate code. Type `y` and select the language which you would like to implement the server in.
 
