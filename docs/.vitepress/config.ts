@@ -110,6 +110,10 @@ export default {
 							link: '/guides/how-to-guides/make-your-first-request'
 						},
 						{
+							text: 'Build your first console',
+							link: '/guides/how-to-guides/build-your-first-console'
+						},
+						{
 							text: 'Leverage auto-generated documentation',
 							link: '/guides/how-to-guides/auto-generated-docs'
 						},
