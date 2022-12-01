@@ -102,6 +102,25 @@ the core concepts around this design pattern
 
 [Check this out](/guides/references/core-technologies) to understand a bit more about the core technologies we make use of.
 
+### More advanced tutorials
+
+#### Build a console
+
+We have a unique way of building out front-ends. [Follow this tutorial](http://localhost:5173/guides/how-to-guides/build-your-first-console.html) to build your first console
+
+#### Build a backend service
+- [Build a service intro](/guides/how-to-guides/build-a-service/overview)
+- [Build a service design](/guides/how-to-guides/build-a-service/overview)
+- [Build a service implement](/guides/how-to-guides/build-a-service/overview)
+- [Build a service deploy](/guides/how-to-guides/build-a-service/overview)
+
+:::warning
+This tutorial was written long ago and is being reworked at the moment so please
+be aware that some things may not work as expected.
+:::
+
+## NOTE
+
 :::warning Work in progress
 We are still building out this page. Please check back soon for more content!
 :::
