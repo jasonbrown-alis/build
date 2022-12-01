@@ -166,69 +166,61 @@ running `alis neuron build ...`.
 A `product deployment` may consist of all the `neurons` within a `product` or a subset thereof. Common patterns
 have emerged from builders on the Alis Build platform which are discussed in the following section.
 
-## Common deployment patterns
-
-To demonstrate the three most typical deployment patterns, consider the example, depicted in the image, of a `product`
-consisting of three `neurons`.
-
-::: warning **We do apologise**
-We are busy updating our diagrams and have temporarily removed this image.
-:::
-
-### Pattern 1: Full product deployment
-
-The first pattern is where a `product` is deployed having all the `neurons`. This is typically used where a `product` provided
-to clients is required to have all the functionality across all the `neurons` and be independent of other `neuron
-deployments`.
-
-::: warning **We do apologise**
-We are busy updating our diagrams and have temporarily removed this image.
-:::
-
-### Pattern 2: Limited features product deployment
-
-The second pattern is where a `product` is deployed having a subset of `neurons`. This is typically used where a `product`
-may have a range of features that may individually be purchased by clients and therefore want to limit those available
-in a given `product deployment`.
-
-The image depicts an example where two clients have access to two different `product deployments`. The `product` having the
-core functionality as part of `Neuron 1` and additional features being available with the other `neurons`. In the first case,
-the client would have the functionality provided by the core `Neuron 1` and the extended functionality of `Neuron 2`.
-In the second case, the client would have the functionality provided by the core `Neuron 1` and the extended
-functionality of `Neuron 3`.
-
-::: warning **We do apologise**
-We are busy updating our diagrams and have temporarily removed this image.
-:::
-
-[//]: # (### Pattern 3: Interdependent neurons product deployment)
+[//]: # (## Common deployment patterns)
 
 [//]: # ()
-[//]: # (The final pattern is where multiple `product deployments` may have the need to access a single `neuron` version. This)
+[//]: # (To demonstrate the three most typical deployment patterns, consider the example, depicted in the image, of a `product`)
 
-[//]: # (may be due to various use cases including:)
-
-[//]: # (- The shared `neuron` containing a common data set that all `product deployements` are dependent on.<br />)
-
-[//]: # (  _Example_: A common set of core financial instrument resources.)
-
-[//]: # (- Architecturally, deciding to use a single Google Cloud product instance to perform the logic of the neuron.<br />)
-
-[//]: # (  _Example_: A <a href="https://cloud.google.com/bigtable/docs/overview" targer="_blank">Cloud BigTable</a> instance)
-
-[//]: # (  that is shared by other services to store information. <br />)
-
-[//]: # (  The reasoning being that each BigTable instance is billed.)
-
-[//]: # (  Therefore, using a single, shared instance with tight access control provides the same functionality but at a much)
-
-[//]: # (  lower cost.)
+[//]: # (consisting of three `neurons`.)
 
 [//]: # ()
-[//]: # (The image depicts an example where `neuron deployments` of multiple `product deployments` make use of an individual,)
+[//]: # (::: warning **We do apologise**)
 
-[//]: # (shared `neuron deployment`.)
+[//]: # (We are busy updating our diagrams and have temporarily removed this image.)
+
+[//]: # (:::)
 
 [//]: # ()
+[//]: # (### Pattern 1: Full product deployment)
+
 [//]: # ()
-[//]: # (![]&#40;../.vuepress/public/assets/images/ExchangeConceptsProductNeuronPattern3.svg&#41;)
+[//]: # (The first pattern is where a `product` is deployed having all the `neurons`. This is typically used where a `product` provided)
+
+[//]: # (to clients is required to have all the functionality across all the `neurons` and be independent of other `neuron)
+
+[//]: # (deployments`.)
+
+[//]: # ()
+[//]: # (::: warning **We do apologise**)
+
+[//]: # (We are busy updating our diagrams and have temporarily removed this image.)
+
+[//]: # (:::)
+
+[//]: # ()
+[//]: # (### Pattern 2: Limited features product deployment)
+
+[//]: # ()
+[//]: # (The second pattern is where a `product` is deployed having a subset of `neurons`. This is typically used where a `product`)
+
+[//]: # (may have a range of features that may individually be purchased by clients and therefore want to limit those available)
+
+[//]: # (in a given `product deployment`.)
+
+[//]: # ()
+[//]: # (The image depicts an example where two clients have access to two different `product deployments`. The `product` having the)
+
+[//]: # (core functionality as part of `Neuron 1` and additional features being available with the other `neurons`. In the first case,)
+
+[//]: # (the client would have the functionality provided by the core `Neuron 1` and the extended functionality of `Neuron 2`.)
+
+[//]: # (In the second case, the client would have the functionality provided by the core `Neuron 1` and the extended)
+
+[//]: # (functionality of `Neuron 3`.)
+
+[//]: # ()
+[//]: # (::: warning **We do apologise**)
+
+[//]: # (We are busy updating our diagrams and have temporarily removed this image.)
+
+[//]: # (:::)

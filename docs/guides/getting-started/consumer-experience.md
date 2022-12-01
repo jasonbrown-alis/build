@@ -61,18 +61,9 @@ The builders of this product allows you to list all the books available, `ListBo
 // Book service for foo.br.
 service BooksService {
 	// List all available books.
-	rpc ListBooks(ListBooksRequest) returns (ListBooksResponse) {
-		option (google.api.http) = {
-			get: "/resources/books/v1/books"
-		};
-	}
+	rpc ListBooks(ListBooksRequest) returns (ListBooksResponse) {}
 	// Get a specific book.
-	rpc GetBook(GetBookRequest) returns (Book) {
-		option (google.api.http) = {
-			get: "/resources/store/v1/{name=books/*}"
-		};
-		option (google.api.method_signature) = "name";
-	}
+	rpc GetBook(GetBookRequest) returns (Book) {}
 }
 ```
 
@@ -114,39 +105,59 @@ We suggest creating your own function and incorporating a request to the `BooksC
 3. Use the response of `ListBooks` to make multiple `GetBook` requests.
 
 </tab>
-<tab name="R">
 
-<a href="https://gitpod.io#snapshot/c858a081-f9e0-4791-9330-606a568df6fd" target="_blank">Preconfigured R cloud IDE</a>
+[//]: # (<tab name="R">)
 
-1. Open up the terminal (Mac: `⌘ + j`, Windows: `ctrl + j` ).
+[//]: # ()
+[//]: # (<a href="https://gitpod.io#snapshot/c858a081-f9e0-4791-9330-606a568df6fd" target="_blank">Preconfigured R cloud IDE</a>)
 
-   >If the terminal is already open run `$ clear` to clear the terminal window.
+[//]: # ()
+[//]: # (1. Open up the terminal &#40;Mac: `⌘ + j`, Windows: `ctrl + j` &#41;.)
 
-2. Make sure you are in the `playground` directory.
+[//]: # ()
+[//]: # (   >If the terminal is already open run `$ clear` to clear the terminal window.)
 
-```bash
-	cd workspace/playground
-```
+[//]: # ()
+[//]: # (2. Make sure you are in the `playground` directory.)
 
-	3. Run the code
+[//]: # ()
+[//]: # (```bash)
 
-```bash
-	Rscript booksConsume.r
-```
+[//]: # (	cd workspace/playground)
 
-#### Get a feel for the Alis Build experience
+[//]: # (```)
 
-Interested in trying something for yourself?
+[//]: # ()
+[//]: # (	3. Run the code)
 
-We suggest creating your own function and incorporating a request to the `BooksClient`. Some suggestions of things to try:
+[//]: # ()
+[//]: # (```bash)
 
-1. Loop through all the books and print out the author.
-2. Get a book and wrangle the response to be printed out in a sentence structure.
-3. Use the response of `ListBooks` to make multiple `GetBook` requests.
+[//]: # (	Rscript booksConsume.r)
 
-If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide](/guides/how-to-guides/make-your-first-request.md).
+[//]: # (```)
 
-</tab>
+[//]: # ()
+[//]: # (#### Get a feel for the Alis Build experience)
+
+[//]: # ()
+[//]: # (Interested in trying something for yourself?)
+
+[//]: # ()
+[//]: # (We suggest creating your own function and incorporating a request to the `BooksClient`. Some suggestions of things to try:)
+
+[//]: # ()
+[//]: # (1. Loop through all the books and print out the author.)
+
+[//]: # (2. Get a book and wrangle the response to be printed out in a sentence structure.)
+
+[//]: # (3. Use the response of `ListBooks` to make multiple `GetBook` requests.)
+
+[//]: # ()
+[//]: # (If you are interested in recreating this example in your own development environment, we suggest that you check out the [Make your first request guide]&#40;/guides/how-to-guides/make-your-first-request.md&#41;.)
+
+[//]: # ()
+[//]: # (</tab>)
 </tabs>
 
 ## Next Steps

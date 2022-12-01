@@ -24,7 +24,7 @@ Each of the steps is explained in the following sections and follow the structur
 > ‼️ The build example provides detailed steps for the user actions whereas this section aims to communicate the high-level overview of what would be done.
 
 
-## Create protocol buffer
+## Define: Create protocol buffer
 
 Protocol buffers (proto) is the cornerstone of what we build on the platform. Creating the proto is the starting point for building out the functionality for your product.
 
@@ -34,7 +34,7 @@ Simply run the `alis proto create` command from the terminal.
 #### 🏗 Alis Build
 In the background, the platform creates a protocol buffer resource within the product and provides a boilerplate proto file which is to be defined in the following step.
 
-## Define methods and messages
+## Define: Methods and messages
 
 Defining the methods and messages in the proto is one of the most important aspects of the build process as it serves as the source of truth for the functionality of the products. The [Resource-oriented design](../references/resource-oriented-design.md) pattern is widely adopted and provides detailed guidelines on how to approach the definitions and best practices for writing APIs.
 
@@ -54,7 +54,7 @@ _e.g. [Standard methods](https://google.aip.dev/131) such as `CreatePortfolio`, 
 Since the protos sit within a version control repo, multiple developers may collaborate and iterate on the proto design. Once the proto is defined and ready to be implemented, it can be `released`.
 
 
-## Release protocol buffer
+## Define: Release protocol buffer
 
 Releasing a protocol buffer is a big thing in our world. It communicates that the current state of the proto is the source of truth. In other words, it is what should be implemented on your side and what clients can expect to consume. There is a lot that also happens in the background which we will unpack in the following section.
 
@@ -70,7 +70,7 @@ The release of the proto automatically kicks off a lot of processes on Alis Buil
 
 This single source of truth also sets the foundation for additional auto-generated aspects, which are discussed in the following sections.
 
-## Create neuron
+## Implement: Create neuron
 
 A neuron is a _unit of compute_ within a product, i.e. the infrastructure and code that executes the logic. This therefore consists of a set of cloud infrastructure and, in most cases, some form of code implementation. The cloud infrastructure is specified using Terraform and the code implementation may be done in any language.
 
@@ -80,7 +80,7 @@ Simply run the `alis neuron create` command from the terminal and follow the pro
 #### 🏗 Alis Build
 In the background, the platform will provide pre-populated Terraform files based on the neuron requirements. Furthermore, code template files are also available which use a templating engine along with the latest protocol buffer release to auto-generate server implementation code in the supported languages.
 
-## Specify infrastructure
+## Implement: Specify infrastructure
 
 The Terraform files define the required infrastructure needs that will be applied in the respective cloud environments.
 
@@ -90,7 +90,7 @@ When creating the neuron, the platform provides a set of Terraform files. These 
 #### 🏗 Alis Build
 The Alis CLI has the command available `alis gen terraform` which is able to generate commonly used Terraform specs out of the box.
 
-## Implement code
+## Implement: Business logic
 
 In the majority of cases, there is some form of code implementation which realises the methods defined in protocol buffer, referred to as the implementation of the server. In this step, one effectively builds out the APIs to process the request, execute logic in the code and return a response.
 
@@ -101,7 +101,7 @@ In the majority of cases, there is some form of code implementation which realis
 #### 🏗 Alis Build
 The Alis CLI has the command available `alis gen code` which is able to generate files in various languages.
 
-## Release neuron
+## Implement: Release neuron
 
 Releasing a neuron does two primary things:
 1. It tags the latest committed state of the infrastructure specification for the neuron, which will be applied to the environment on deploy.
@@ -113,7 +113,7 @@ Simply run the `alis neuron release` command from the terminal and follow the pr
 #### 🏗 Alis Build
 The tagging of the infrastructure is facilitated by us. Furthermore, the Alis Build platform looks for one or more Dockerfile in the neuron's repos which are then built on [Cloud Build](https://cloud.google.com/build).
 
-## Deploy neuron
+## Implement: Deploy neuron
 
 The deployment of the neuron applies the infrastructure specification to a specified deployment environment(s) (e.g. staging or production). A typical example of the outcome would be that a deployment environment has:
 - A fully managed instance of the neuron's containerised code ([Cloud Run](https://cloud.google.com/run) instance) which provides clients a means of accessing its methods.
@@ -134,8 +134,9 @@ With the former example, this would result in:
 
 Leveraging Terraform allows developers to only care about correctly defining the specification, the Alis Build platform will facilitate the implementation thereof.
 
-## Experience it for yourself
+## See it for yourself
+
+You can see the basic flow in the sample: [Effortlessly Deploy your Insurance Pricing model developed in Python at scale](https://samples.alis.build/samples/1666818220001).
 
 We are advocates of learning by doing and are currently working on a comprehensive build example. In the meantime, [schedule a demo](https://alis.exchange/signup) by filling out the form, and we will take you through the process.
-
 

@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Alis Build Quickstart
 ---
 
 # Welcome to the Alis Build platform
@@ -98,7 +98,7 @@ developers to only focus on adding business logic.
 We will leverage these to implement the `Greeter` service by running the following command
 and selecting one or more of auto-generated options provided.
 ```bash
-alis proto gen
+alis proto gen boilerplate
 ```
 
 :::warning
@@ -236,18 +236,39 @@ spin up the server and make a hit from the client to see this in action.
 </tab>
 </tabs>
 
+## Support for additional languages
+
+We are constantly working on expanding the auto-generated functionality such as demonstrated above.
+
+While we may not have full code boilerplate generation support for all available languages, you are still able
+to generate type definitions for a wider range of languages.
+
+### Test it out
+
+In your terminal, run the following command to generate the types:
+
+```bash
+alis proto gen types
+```
+
+The flow should be similar to that below.
+
+![](img/introduction-proto-gen-types.gif)
+
+These can now be imported in your codebase to leverage the power of the definition-first approach.
+
 ## Want to see more?
 
 :::info Note
-The rest of the documentation is primarily geared towards Alis Build Enterprise, which gives the simple process
+The rest of the documentation is primarily geared towards [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
 of design, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
 :::
 
-### Consume digital services
-We aim to ensure that how software across the platform operates, communicates and integrates is simple and consistent. [Find out more and experience it yourself](consumer-experience.md).
-
 ### Design and implement digital services
 The Alis Build platform gives you and your organisation software development superpowers. [Experience what we make possible](developer-flow.md).
+
+### Consume digital services
+We aim to ensure that how software across the platform operates, communicates and integrates is simple and consistent. [Find out more and experience it yourself](consumer-experience.md).
 
 ### Configure your device
 Already joined Alis Build? Follow the guides to set up your local environment, starting off with our [command line interface](command-line-interface.md).
