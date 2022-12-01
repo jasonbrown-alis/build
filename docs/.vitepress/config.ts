@@ -78,6 +78,10 @@ export default {
                             link: `/${ROOT_GUIDES}/getting-started/introduction`
                         },
 						{
+							text: 'Alis CLI installation',
+							link: '/guides/getting-started/command-line-interface'
+						},
+						{
 							text: "Overview",
 							items: [
 								{
@@ -93,10 +97,6 @@ export default {
 									link: '/guides/getting-started/consumer-experience'
 								},
 							]
-						},
-						{
-							text: 'Alis CLI installation',
-							link: '/guides/getting-started/command-line-interface'
 						},
                     ]
 				},
