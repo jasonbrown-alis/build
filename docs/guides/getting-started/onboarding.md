@@ -106,13 +106,13 @@ the core concepts around this design pattern
 
 #### Build a console
 
-We have a unique way of building out front-ends. [Follow this tutorial](http://localhost:5173/guides/how-to-guides/build-your-first-console.html) to build your first console
+We have a unique way of building out front-ends. [Follow this tutorial](/guides/how-to-guides/build-your-first-console) to build your first console
 
 #### Build a backend service
 - [Build a service intro](/guides/how-to-guides/build-a-service/overview)
-- [Build a service design](/guides/how-to-guides/build-a-service/overview)
-- [Build a service implement](/guides/how-to-guides/build-a-service/overview)
-- [Build a service deploy](/guides/how-to-guides/build-a-service/overview)
+- [Build a service design](/guides/how-to-guides/build-a-service/design)
+- [Build a service implement](/guides/how-to-guides/build-a-service/implement)
+- [Build a service deploy](/guides/how-to-guides/build-a-service/deploy)
 
 :::warning
 This tutorial was written long ago and is being reworked at the moment so please
