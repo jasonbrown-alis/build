@@ -18,34 +18,34 @@ feel free to edit it on GitHub and submit a pull request, or reach out to any of
 
 
 ## Questions & Answers
-> I feel a bit lost
+> I feel a bit lost 🤷‍♂️
 
 Send us a message, we're likely unaware of that!
 
-> I'm not sure what I should do and what my tasks are
+> I'm not sure what I should do and what my tasks are 👀
 
 Send us a message, we're likely unaware of that!
 
-> I don't have access to certain codebases or APIs
+> I don't have access to certain codebases or APIs 🔐
 
 Send us a message, we're likely unaware of that!
 
-> My device is not working
+> My device is not working 💻
 
 Send us a message, we're likely unaware of that!
 
-> There's too much work for me
+> There's too much work for me 😫
 
 Send us a message, we're likely unaware of that!
 
-> There's not enough work for me
+> There's not enough work for me 🏖️
 
 Send us a message, we're likely unaware of that!
 
 In short, for any reason, do not hestitate to drop us a message! **Communication is key**.
 Otherwise, any minor issue can build up and create unnecessary stress or problems.
 
->I sent a message but nobody answered...
+>I sent a message but nobody answered... 💬
 
 Send us a reminder (after a reasonable time). There's usually a lot going on so it happens
 that we miss or skip things. It's not against you, and we'll be thankful that you reminded us.
