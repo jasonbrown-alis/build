@@ -44,7 +44,7 @@ cd helloworld
 </tab>
 </tabs>
 
-## 1. Design
+## 1. Define
 
 In the _design_ step, we use [Protocol Buffers](../references/resource-oriented-design.md#protocol-buffers) to
 define all resources and services that we use.
