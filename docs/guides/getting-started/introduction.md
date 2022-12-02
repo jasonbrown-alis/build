@@ -13,11 +13,11 @@ High-quality software needs to be scalable, readily accessible, secure, easy-to-
 The technologies and standards already exist to lower these barriers, but they are disjointed and require a lot of effort to consolidate and effectively leverage before the value is realised. We have done the work of thinking through these complex problems, identifying the best-in-class open-source technologies and standards, and brought these together for the users of the platform.
 
 Our aim is to democratise building software, enabling anyone to build their own innovation through the simple steps of
-_design, implement and consume_.
+_define, implement and consume_.
 
 ## Experience it yourself
 
-Experience the simplicity of _design, implement and consume_ that is Alis Build enables by following
+Experience the simplicity of _define, implement and consume_ that is Alis Build enables by following
 the example.
 
 This example is derived from the [gRPC quickstart documentation](https://grpc.io/docs/languages/go/quickstart/).
@@ -46,7 +46,7 @@ cd helloworld
 
 ## 1. Define
 
-In the _design_ step, we use [Protocol Buffers](../references/resource-oriented-design.md#protocol-buffers) to
+In the _define_ step, we use [Protocol Buffers](../references/resource-oriented-design.md#protocol-buffers) to
 define all resources and services that we use.
 
 From your terminal, run the command:
@@ -153,7 +153,7 @@ To implement the logic, open the desired language directory in your IDE and foll
 
 Notice how the definitions from the `service.proto` file travels with the code. This
 greatly boosts developer productivity as:
-1. The design step, which contains the documentation, is not an afterthought but is integral to the development process.
+1. The _define_ step, which contains the documentation, is not an afterthought but is integral to the development process.
 2. These definitions are shipped with the code, providing developers with the types and documentation they require in their IDE.
 
 Both these factors contribute to enforcing good development practices and greatly improves
@@ -213,7 +213,7 @@ func main() {
 
 ## Test it out
 
-Now that we have _designed_ our service; _implemented_ the logic; and added code for the _consumption_, we can now
+Now that we have _defined_ our service; _implemented_ the logic; and added code for the _consumption_, we can now
 spin up the server and make a hit from the client to see this in action.
 
 <tabs>
@@ -261,7 +261,7 @@ These can now be imported in your codebase to leverage the power of the definiti
 
 :::info Note
 The rest of the documentation is primarily geared towards [Alis Build Enterprise](https://alisx.com/#:~:text=Enterprise), which gives the simple process
-of design, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
+of define, implement and consume superpowers by providing a complete cloud development framework for teams and organisations.
 :::
 
 ### Design and implement digital services
