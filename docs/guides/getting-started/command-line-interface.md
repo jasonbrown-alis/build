@@ -6,39 +6,16 @@ title: Command Line Interface
 
 The Alis command-line interface (CLI) is a powerful tool for managing resources on the Alis Build platform.  You can use this tool to perform many common platform tasks either from the command line or in scripts and other automations. Some example use cases for the CLI:
 
-- Create a new product / organisation;
+**Build Lite**
+- Initialise new protos;
+- Auto-generate language-specific types; and
+- Auto-generate server and client code.
+
+**Build Premium**
+- Create a new product;
 - Deploy new versions of your product;
 - Manage the build and deploy steps of your services; and
 - Auto-generate infrastructure and implementation code.
-
-## Install Prerequisites
-
-Before you install the Alis CLI, install the following prerequisites:
-
-### Google Cloud SDK
-
-The CLI makes use of Google Cloud SDK authentication to seamlessly authenticate your requests to the platform.
-
-1. Install the latest version of Cloud SDK for your device by following the [instructions](https://cloud.google.com/sdk/docs/install).
-2. Run `gcloud auth login` from your terminal to authenticate your local environment with Google user account via a web-based authorization flow.
-    *NOTE* Ensure that you login using your account associated with the Alis Build platform.
-3. Run `gcloud auth application-default login` to acquire new user credentials to use for Application Default Credentials ([ADC](https://developers.google.com/identity/protocols/application-default-credentials)). These are used in calling Google APIs.
-
-
-### Git
-
-Git may already be installed on your device. Check by running `git --version`. A successful response should look similar to `git version 2.30.0`. If the command was not found, follow the [installation instructions](https://www.atlassian.com/git/tutorials/install-git).
-
-### Connect Git with Google Cloud
-
-Your Git needs to be configured with Google Cloud Source repositories. Credential helper scripts provide the information that Git needs to connect securely to Cloud Source Repositories using your Google Account credentials.
-
-1. Access [this link](https://source.developers.google.com/auth/start?scopes=https://www.googleapis.com/auth/cloud-platform&state=) and log in with your Google credentials
-2. Copy the relevant script into your terminal
-
-::: tip **Check success**
-Check if this was successful by opening the `.gitcookies` file in Vim: `vim ~/.gitcookies`. If successful, the file should contain a `source.developers.google.com` entry.
-:::
 
 ##  Installation
 
@@ -123,11 +100,25 @@ Not sure what your OS or ARCH is? Run `set PROCESSOR` to find out.
 </tab>
 </tabs>
 
-
-
 You have successfully installed the Alis CLI!
 
+:::tip
 
+If you are a Build Premium or Enterprise user, you will need to ensure the following:
+
+1. **Ensure Git is installed**
+
+Git may already be installed on your device. Check by running `git --version`. A successful response should look similar to `git version 2.30.0`.
+
+If the command was not found, follow the [installation instructions](https://www.atlassian.com/git/tutorials/install-git).
+
+2. **Connect the CLI with Google Cloud and Google Cloud Source Repositories**
+
+From your terminal, run `alis login`. This will open your browser and require you to grant access to the Alis Exchange CLI to manage your Google Cloud.
+
+Once you have granted access, you will be redirected to a similar login page for Google Cloud Source Repositories. Granting access allows for the CLI
+to manage your repositories. Once you have logged in, follow the instructions in copying the relevant script into your terminal.
+:::
 
 ### Try out alis_ CLI
 
