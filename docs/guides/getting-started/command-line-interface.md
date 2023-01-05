@@ -70,13 +70,17 @@ You have successfully installed the **alis.exchange** CLI!
 2. Run the following command to create a folder in your home directory **alis.exchange** with a sub-folder _cli_.
 
 ```bash
-md %HOMEPATH%\alis.exchange\cli
+mkdir %HOMEPATH%\alis.exchange\cli
 ```
-
+   
+::: warning
+If your `HOMEPATH` contains a space, you might need to manually create both a `alis.exchange` directory, as well as a `cli` directory therein.
+:::
+   
 3. Add this folder to your `$PATH`:
 
 ```bash
-setx PATH "%PATH%;%PATH%;%HOMEPATH%\alis.exchange\cli" /m
+setx PATH "%PATH%;%HOMEPATH%\alis.exchange\cli" /m
 ```
 
 4. Download the latest version of the CLI for your operating system (OS) and architecture (ARCH).
