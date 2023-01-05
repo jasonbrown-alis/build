@@ -17,7 +17,7 @@ _define, implement and consume_.
 
 ## Experience it yourself
 
-Experience the simplicity of _define, implement and consume_ that is Alis Build enables by following
+Experience the simplicity of _define, implement and consume_ that Alis Build enables by following
 the example.
 
 This example is derived from the [gRPC quickstart documentation](https://grpc.io/docs/languages/go/quickstart/).
