@@ -38,7 +38,7 @@ cd helloworld
 <tab name="Windows">
 
 ```bash
-md helloworld
+mkdir helloworld
 cd helloworld
 ```
 </tab>
