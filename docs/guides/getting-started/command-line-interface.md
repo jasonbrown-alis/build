@@ -46,7 +46,7 @@ Not sure what your OS or ARCH is? Run `uname -a` to find out.
    | ------ | -----|
 |   | [Linux Arm](https://files.cli.alis.services/linux/arm/latest/alis) |
 | [Darwin Arm64 (M1)](https://files.cli.alis.services/darwin/arm64/latest/alis) | [Linux Arm64](https://files.cli.alis.services/linux/arm64/latest/alis) |
-| [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/arm64/latest/alis) |
+| [Darwin Amd64](https://files.cli.alis.services/darwin/amd64/latest/alis) | [Linux Amd64](https://files.cli.alis.services/linux/amd64/latest/alis) |
 
 4. Place the file in your _alis.exchange/cli_ folder. Run the following command to give it execute permission:
 
